@@ -1,10 +1,16 @@
 Options -Indexes
+DirectoryIndex index.html
 <FilesMatch "^(votes\.private\.php|votes\.json)$">
   Require all denied
 </FilesMatch>
 <IfModule mod_headers.c>
+  # Always serve the latest page, translations and tally (bypasses browser and SiteGround proxy caches).
+  <FilesMatch "\.(html|json|php)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set X-Accel-Expires "0"
+    Header unset ETag
+  </FilesMatch>
   <Files "counts.json">
-    Header set Cache-Control "no-store"
     Header set Access-Control-Allow-Origin "*"
   </Files>
 </IfModule>
