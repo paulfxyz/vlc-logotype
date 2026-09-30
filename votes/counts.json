@@ -1,9 +1,12 @@
 {
     "project": "VLC Logotype",
     "source": "https://github.com/paulfxyz/vlc-logotype",
-    "updated_at": "2026-09-30T00:29:39+00:00",
-    "total_votes": 0,
-    "voters": 0,
-    "counts": {},
-    "ledger_sha256": "6bb5954b29037279c06a575a15a3dd5890a24653c326f98511ad21c579f903fd"
+    "updated_at": "2026-09-30T00:58:05+00:00",
+    "total_votes": 2,
+    "voters": 1,
+    "counts": {
+        "02": 1,
+        "07": 1
+    },
+    "ledger_sha256": "c3838fa1abde930f4fdff926aa4cc7cdb21393bd2c587b5a05675d9c4fe4dc5e"
 }
