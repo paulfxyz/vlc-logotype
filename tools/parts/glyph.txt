@@ -1,0 +1,26 @@
+/* ---------- neighbour placeholder apps (generic, non-trademark) ---------- */
+const SQ = (()=>{let p=[];for(let i=0;i<120;i++){const t=2*Math.PI*i/120,c=Math.cos(t),s=Math.sin(t);p.push((50+50*Math.sign(c)*Math.abs(c)**.4).toFixed(1)+','+(50+50*Math.sign(s)*Math.abs(s)**.4).toFixed(1))}return 'M'+p.join('L')+'Z'})();
+const GLYPH = {
+  folder:'<path d="M24 34h20l6 6h26v30H24z" fill="#fff" opacity=".95"/>',
+  term:'<path d="M28 38l12 10-12 10" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M46 62h24" stroke="#fff" stroke-width="6" stroke-linecap="round"/>',
+  gear:'<circle cx="50" cy="50" r="18" fill="none" stroke="#fff" stroke-width="8" stroke-dasharray="7 4.3"/><circle cx="50" cy="50" r="8" fill="#fff"/>',
+  mail:'<rect x="24" y="32" width="52" height="36" rx="5" fill="#fff"/><path d="M24 34l26 20 26-20" stroke="#2A7BF6" stroke-width="4" fill="none"/>',
+  music:'<path d="M42 30v30a8 8 0 1 1-6-7.7V36l30-7v26a8 8 0 1 1-6-7.7V34z" fill="#fff"/>',
+  globe:'<circle cx="50" cy="50" r="24" fill="none" stroke="#fff" stroke-width="5"/><path d="M26 50h48M50 26c-12 14-12 34 0 48M50 26c12 14 12 34 0 48" stroke="#fff" stroke-width="4" fill="none"/>',
+  note:'<rect x="30" y="24" width="40" height="52" rx="5" fill="#fff"/><path d="M36 38h28M36 48h28M36 58h18" stroke="#E5B400" stroke-width="4"/>',
+  photo:'<g opacity=".95"><circle cx="50" cy="38" r="11" fill="#FFCC00"/><circle cx="38" cy="54" r="11" fill="#34C759"/><circle cx="62" cy="54" r="11" fill="#FF2D55"/></g>',
+  chat:'<path d="M26 40a20 16 0 1 1 10 14l-10 6 3-10a20 16 0 0 1-3-10z" fill="#fff"/>',
+  cal:'<rect x="28" y="28" width="44" height="44" rx="6" fill="#fff"/><text x="50" y="62" text-anchor="middle" font-size="24" font-family="Arial" font-weight="700" fill="#E5484D">30</text>',
+  cam:'<rect x="24" y="36" width="52" height="34" rx="7" fill="#fff"/><circle cx="50" cy="53" r="10" fill="#555"/>',
+  code:'<path d="M40 36L28 50l12 14M60 36l12 14-12 14" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/>',
+  trash:'<path d="M34 36h32l-3 36H37z" fill="#fff" opacity=".85"/><rect x="30" y="30" width="40" height="6" rx="2" fill="#fff"/>'
+};
+const APPS = [['Files','#3AA0FF','#1E6FE8','folder'],['Browser','#4FC3F7','#1976D2','globe'],['Mail','#5AB0FF','#2A7BF6','mail'],['Music','#FF5A7A','#E0245E','music'],['Notes','#FFE27A','#F5C400','note'],['Photos','#FFFFFF','#EDEDED','photo'],['Messages','#5CE27A','#1DB954','chat'],['Calendar','#FFFFFF','#F0F0F0','cal'],['Terminal','#3A3A3A','#111111','term'],['Settings','#9BA0A8','#5B616B','gear'],['Code','#5A8DEE','#2F57C5','code'],['Camera','#A0A0A8','#55555C','cam']];
+function tileURI(app, shape){
+  const [n,c1,c2,g]=app; const clip = shape==='circle' ? '<circle cx="50" cy="50" r="50"/>' : shape==='rrect' ? '<rect x="10" y="10" width="80" height="80" rx="9"/>' : shape==='full' ? `<path d="${SQ}"/>` : `<path d="${SQ}" transform="translate(10 10) scale(.8)"/>`;
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient><clipPath id="m">${clip}</clipPath></defs><g clip-path="url(#m)"><rect width="100" height="100" fill="url(#g)"/><g ${shape==='mac'||shape==='rrect'?'transform="translate(10 10) scale(.8)"':''}>${GLYPH[g]}</g></g></svg>`;
+  return 'data:image/svg+xml,'+encodeURIComponent(svg);
+}
+const T = (i, s) => `<img alt="" src="${tileURI(APPS[i % APPS.length], s)}">`;
+const IC = (id, plat) => `icons/${plat}/${id}.svg`;
+

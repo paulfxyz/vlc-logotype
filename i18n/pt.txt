@@ -1,0 +1,100 @@
+01|Renovação fiel|O cone de sempre, finalmente assente numa verdadeira squircle do macOS, com uma placa quente em branco-sujo.
+02|Laranja invertido|O laranja da marca passa a ser a placa; um cone branco e nítido com riscas laranja.
+03|Grafite Pro|Placa grafite escura ao estilo das apps Pro (pense em Final Cut ou Logic) com um cone luminoso.
+04|Vidro líquido|Estilo macOS Tahoe: um cone translúcido e fosco a flutuar sobre um degradê quente.
+05|Plano minimal|Uma cor, uma forma. Silhueta branca com uma única risca em negativo.
+06|Pôr do sol|Degradê de fim de tarde, do laranja ao magenta, divertido e moderno.
+07|Cone Play|A risca do meio dá lugar a um triângulo de reprodução: um leitor multimédia à primeira vista.
+08|Neumorfismo suave|Um cone em relevo, como se fosse gravado numa superfície clara e quente.
+09|3D arredondado|Um verdadeiro volume cónico, com riscas curvas e base elíptica.
+10|Linha SF|Cone monolinha ao estilo dos SF Symbols, branco sobre laranja; perfeitamente legível a 16 px.
+11|8 bits|Cone em pixel art retro para os nostálgicos. Nítido em qualquer escala inteira.
+12|Bobina de filme|O cone dentro de uma bobina de filme, uma piscadela às raízes cinéfilas do VLC.
+13|Planta técnica|O cone em desenho técnico sobre papel azul. Para os engenheiros.
+14|Néon noturno|Cone em tubo de néon sobre azul meia-noite. Destaca-se numa Dock escura.
+15|Tom mono|Feito para os modos com tonalidade e transparente do macOS e do iOS: cinzentos puros que se adaptam a qualquer cor de destaque.
+16|Vista de cima|O cone visto de cima: anéis concêntricos laranja e brancos com um botão de reprodução ao centro.
+17|Estúdio realista|Realismo de estúdio fotográfico: plástico brilhante, sombra suave no chão e uma ligeira vinheta.
+18|Papel recortado|Efeito de papel em camadas: recortes sobrepostos com pequenas sombras entre eles.
+19|Lente|Uma lente de vidro que amplia o cone. A metáfora da ótica.
+20|Rebuçado Aqua|Uma carta de amor ao Aqua do Mac OS X: cone brilhante como gelatina, com um grande reflexo.
+21|Cone + VLC|O cone com um logótipo VLC limpo por baixo; mais fácil de reconhecer em tamanhos grandes.
+22|Ondas sonoras|O cone emite ondas: o áudio conta tanto como o vídeo.
+23|Tom dividido|Metade luz, metade sombra: um cone gráfico, ao estilo de cartaz.
+24|No ecrã|Um pequeno ecrã com o cone lá dentro: percebe-se logo que é um leitor de vídeo.
+25|Holo|Placa holográfica iridescente com um cone branco cromado.
+26|Perigo|Riscas de sinalização pretas e laranja, estilo brutalista, com o cone recortado a branco.
+27|Botão cone|O cone dentro do aro redondo de um botão de reprodução, como um controlo de transporte.
+28|Pastel|Paleta de pêssego e creme: calma, simpática, muito anos 2020.
+29|Barro 3D|Render em plasticina: arestas arredondadas, material mate e uma oclusão ambiente generosa.
+30|Tahoe em camadas|Ícone do macOS 26 fiel às diretrizes: primeiro plano em camadas, contorno especular e placa com um degradê subtil.
+31|Brasa|Placa escura com um brilho de brasa a subir por trás de um cone brilhante.
+32|Duotone|Amarelo e laranja, sem qualquer branco. Quente, plano como um cartaz e muito legível.
+33|Low poly|Cone facetado em low poly. Lê-se em 3D com apenas quatro formas planas.
+34|Autocolante|Autocolante recortado, com uma borda branca grossa e uma ligeira inclinação: puro espírito de tampa de portátil.
+35|Preto e ouro|Edição de luxo: placa preto-mate e cone em ouro escovado. Para um visual topo de gama.
+36|Aguarela|Toque pintado à mão: manchas suaves de pigmento por trás de um cone limpo.
+37|Barras empilhadas|Um cone abstrato feito de cinco barras arredondadas, como um equalizador deitado.
+38|Sombra longa|Um clássico do flat design: um cone branco que projeta uma sombra longa a 45° sobre a placa.
+39|Cromado|Cone em metal líquido polido, com um reflexo laranja.
+40|Terminal|Um cone em arte ASCII numa janela de terminal, para os fãs da linha de comandos.
+41|Monograma V|O cone virado num V de VLC; as riscas continuam a dizer «cone de sinalização».
+42|Mascote|Um cone simpático com olhos e um sorriso. Ótimo para os mais novos e fácil de fixar.
+43|Vidro aurora|Glassmorphism escuro: manchas de aurora desfocadas por baixo de um cone fosco.
+44|Material You|Paleta tonal do Android 12 e posteriores: contentor pêssego suave e glifo monocromático laranja-escuro.
+45|Fluent|Estilo Fluent do Windows 11: cone com um degradê suave sobre uma base acrílica discreta, pensado para a barra de tarefas.
+46|Céu estrelado|Um cone sob um céu estrelado, com um brilho quente no horizonte. Ambiente de noite de cinema.
+47|Wireframe|Malha 3D do cone em arame, luminosa sobre uma grelha escura. O charme da engenharia.
+48|Arco-íris retro|Um cone arco-íris com seis riscas, uma homenagem ao Mac dos anos 80.
+49|Fita Play|Uma única fita laranja que forma ao mesmo tempo um cone e um triângulo de reprodução.
+50|Tahoe escuro|O gémeo escuro do Tahoe em camadas: placa grafite, o mesmo cone em camadas e o mesmo contorno de luz.
+51|Natal|Natal · 25 dez. — um cone com gorro de Pai Natal, orla de pelo e pompom, com neve a cair sobre um vermelho festivo.
+52|Chanucá|Chanucá · 8 noites em kislev — o cone como shamash, a acender oito velas sobre um azul profundo.
+53|Passagem de Ano|Ano Novo · 31 dez. — um cone com chapéu de festa dourado, fogo de artifício e confetes à meia-noite.
+54|Ano Novo Lunar|Ano Novo Lunar · jan.–fev. — um cone vermelho e dourado entre lanternas de papel.
+55|Dia dos Namorados|Dia dos Namorados · 14 fev. — um cone cor-de-rosa rebuçado com confetes em forma de coração.
+56|Dia de São Patrício|São Patrício · 17 mar. — um cone verde, branco e laranja como a Irlanda, com um trevo.
+57|Páscoa|Páscoa · mar.–abr. — um cone decorado como um ovo pintado à mão, com ovos em tons pastel aos seus pés.
+58|Ramadão|Ramadão · 9.º mês — uma lanterna fanous luminosa e um crescente numa noite tranquila.
+59|Eid al-Fitr|Eid al-Fitr · fim do Ramadão — esmeralda e ouro, estrelas geométricas e um crescente festivo.
+60|Eid al-Adha|Eid al-Adha · 10 de dhu al-hijja — o cone emoldurado por um arco quebrado quente, com um crescente.
+61|Diwali|Diwali · out.–nov. — uma flor de rangoli, diyas de barro e um cone aceso como uma lamparina.
+62|Holi|Holi · lua cheia de phalguna — explosões de pós coloridos e um cone salpicado de tinta.
+63|Navratri|Navratri · nove noites — as nove cores dos dias como raios por trás de um cone branco.
+64|Rosh Hashaná|Rosh Hashaná · tishrei — um ano novo doce: maçã, gota de mel e riscas douradas como o mel.
+65|Vesak|Vesak · lua cheia de vesākha — o cone a erguer-se de uma flor de lótus sob lanternas suaves.
+66|Halloween|Halloween · 31 out. — o cone transforma-se num chapéu de bruxa sob uma lua de outono.
+67|Dia dos Mortos|Día de Muertos · 1–2 nov. — papel picado, cravos-de-defunto e uma placa magenta alegre.
+68|Dia de Ação de Graças|Ação de Graças · nov. — uma placa outonal quente com folhas a cair à volta do cone.
+69|Dia da Independência (EUA)|4 de Julho · 4 jul. — um cone às estrelas e riscas com fogo de artifício sobre azul-marinho.
+70|Festa nacional (FR)|14 de Julho — azul, branco e vermelho: uma placa tricolor com um cone branco e fogo de artifício.
+71|Oktoberfest|Oktoberfest · set.–out., Munique — losangos bávaros, um pretzel e um cone com riscas azuis.
+72|Carnaval do Rio|Carnaval · antes da Quaresma — um cone com penas em verde, amarelo e azul, entre confetes.
+73|Orgulho|Mês do Orgulho · junho — placa com a bandeira Progress e um cone branco limpo.
+74|Dia do Rei (NL)|Koningsdag · 27 abr. — os Países Baixos vestem-se de laranja; o cone finalmente ganha a sua coroa.
+75|Dia do Canadá|Dia do Canadá · 1 jul. — a composição da bandeira, com o cone no lugar da folha de ácer.
+76|Noite de Guy Fawkes (UK)|Bonfire Night · 5 nov. — rastos de estrelinhas e o brilho de uma fogueira.
+77|Songkran|Songkran · 13–15 abr., Ano Novo tailandês — turquesa salpicado de água e um cone acabado de lavar.
+78|Nowruz|Nowruz · 20–21 mar., Ano Novo persa — rebentos de sabzeh primaveris à volta do cone.
+79|Hanami|Hanami · época das cerejeiras em flor, Japão — pétalas cor-de-rosa-claro a esvoaçar junto a um cone com riscas cor-de-rosa.
+80|Santo António (Lisboa)|Santos Populares · 13 jun., Lisboa — azulejos, uma sardinha assada e um cone em festa.
+81|Dia da Terra|Dia da Terra · 22 abr. — o cone em cima de um pequeno planeta verde e azul.
+82|Festival do Meio do Outono|Meio do Outono · dia 15 do 8.º mês lunar — lua cheia, lanterna e padrão de bolo lunar.
+83|Midsommar|Midsommar · final de junho, países nórdicos — céu de sol da meia-noite e uma coroa de flores à volta do cone.
+84|Placa em traço|Placa e cone apenas em traço, no laranja da marca sobre quase preto. Discreto, nítido, muito Pro.
+85|Glitch|Cone com glitch, camadas RGB desalinhadas e linhas de varrimento, ambiente VHS.
+86|Vaporwave|Pôr do sol synthwave sobre uma grelha de néon: o cone como monumento retrofuturista.
+87|Mármore|Placa de mármore de Carrara com veios dourados, sob um cone dourado.
+88|Emblema bordado|Um emblema redondo bordado, com textura de sarja: o VLC em versão manga de casaco.
+89|Voxel|Cone isométrico em voxels, empilhado com blocos laranja e brancos. Muito Minecraft, muito legível.
+90|Holofote|O feixe de um holofote de teatro pousa no cone. Que comece o espetáculo.
+91|Origami|Cone de papel dobrado: dois planos nítidos e uma base branco-papel.
+92|Stencil|Stencil de arte urbana pintado com spray numa parede de tijolo, com salpicos de tinta.
+93|Pop reticulado|Cone de banda desenhada pop art: contornos a tinta preta sobre uma explosão amarela reticulada.
+94|Derretido|O cone a derreter como um gelado num dia de calor. Surreal e muito memorável.
+95|Constelação|O cone desenhado como uma constelação sobre um azul-noite profundo.
+96|Tangram|Sete peças de tangram dispostas em forma de cone. O encanto de um quebra-cabeças.
+97|Espaço negativo|Um disco laranja de onde o cone foi recortado na perfeição. Figura e fundo em estado puro.
+98|Bauhaus|Composição Bauhaus em cores primárias: círculo, quadrado e um cone preto.
+99|Pin esmaltado|Pin de esmalte duro: contornos em metal dourado, enchimentos de esmalte brilhante e um reflexo de luz.
+100|Topográfico|Curvas de nível que irradiam do cone, como um cume num mapa de trilhos.

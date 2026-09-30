@@ -1,0 +1,100 @@
+01|Refonte fidèle|Le cône actuel, enfin posé sur une vraie squircle macOS, avec une plaque blanc cassé chaleureuse.
+02|Orange inversé|L'orange de la marque devient la plaque ; un cône blanc net aux bandes orange.
+03|Graphite Pro|Plaque graphite sombre façon app Pro (pensez Final Cut ou Logic) et cône lumineux.
+04|Verre liquide|Style macOS Tahoe : un cône translucide dépoli qui flotte sur un dégradé chaud.
+05|Plat minimal|Une couleur, une forme. Silhouette blanche avec une seule bande en réserve.
+06|Coucher de soleil|Dégradé du soir, de l'orange au magenta, ludique et moderne.
+07|Cône Lecture|La bande centrale devient un triangle de lecture : un lecteur multimédia au premier coup d'œil.
+08|Néomorphisme doux|Un cône en relief, comme embossé dans une surface claire et chaude.
+09|3D arrondi|Un vrai volume conique, avec bandes incurvées et base elliptique.
+10|Trait SF|Cône monoligne façon SF Symbols, blanc sur orange ; parfaitement lisible en 16 px.
+11|8 bits|Cône en pixel art rétro pour les nostalgiques. Net à chaque échelle entière.
+12|Bobine de film|Le cône au centre d'une bobine, clin d'œil aux racines cinéma de VLC.
+13|Plan technique|Le cône en dessin technique sur papier bleu. Pour les ingénieurs.
+14|Néon nocturne|Cône en tube néon sur bleu nuit. Il ressort dans un Dock sombre.
+15|Teinte mono|Conçu pour les modes teinté et transparent de macOS et iOS : des gris purs qui s'adaptent à toute couleur d'accent.
+16|Vue de dessus|Le cône vu du ciel : anneaux concentriques orange et blancs, avec un bouton lecture au cœur.
+17|Studio réaliste|Réalisme de studio photo : plastique brillant, ombre douce au sol, léger vignettage.
+18|Papier découpé|Effet papier en couches : découpes superposées et petites ombres entre chaque plan.
+19|Lentille|Une lentille de verre qui grossit le cône. La métaphore de l'optique.
+20|Bonbon Aqua|Une lettre d'amour à l'Aqua de Mac OS X : cône brillant comme une gelée, avec un grand reflet.
+21|Cône + VLC|Le cône avec un logotype VLC épuré dessous ; plus reconnaissable en grand format.
+22|Ondes sonores|Le cône émet des ondes : l'audio compte autant que la vidéo.
+23|Ton partagé|Moitié lumière, moitié ombre : un cône graphique, façon affiche.
+24|À l'écran|Un petit écran avec le cône dedans : on comprend tout de suite que c'est un lecteur vidéo.
+25|Holo|Plaque holographique irisée et cône blanc chromé.
+26|Danger|Bandes de signalisation noires et orange, style brutaliste, cône en réserve blanche.
+27|Bouton cône|Le cône dans une lunette ronde de bouton lecture, comme une commande de transport.
+28|Pastel|Palette pêche et crème : calme, avenante, très années 2020.
+29|Argile 3D|Rendu pâte à modeler : angles arrondis, matière mate, occlusion ambiante généreuse.
+30|Tahoe en couches|Icône macOS 26 fidèle aux guidelines : premier plan en couches, liseré spéculaire, plaque au dégradé subtil.
+31|Braise|Plaque sombre et lueur de braise qui monte derrière un cône brillant.
+32|Bichromie|Jaune et orange, sans aucun blanc. Chaud, plat comme une affiche, très lisible.
+33|Low poly|Cône à facettes en low poly. Se lit en 3D avec seulement quatre aplats.
+34|Autocollant|Sticker découpé, gros liseré blanc et légère inclinaison : l'esprit couvercle d'ordinateur.
+35|Noir et or|Édition luxe : plaque noir mat, cône en or brossé. Pour un rendu haut de gamme.
+36|Aquarelle|Touche peinte à la main : taches de pigment douces derrière un cône net.
+37|Barres empilées|Un cône abstrait fait de cinq barres arrondies, comme un égaliseur couché.
+38|Ombre portée longue|Classique du flat design : un cône blanc qui projette une longue ombre à 45° sur la plaque.
+39|Chrome|Cône en métal liquide poli, avec un reflet orange.
+40|Terminal|Un cône en art ASCII dans une fenêtre de terminal, pour les fans de la ligne de commande.
+41|Monogramme V|Le cône retourné en V comme VLC ; les bandes rappellent toujours le cône de chantier.
+42|Mascotte|Un cône sympathique avec des yeux et un sourire. Parfait pour les enfants, facile à retenir.
+43|Verre aurore|Glassmorphism sombre : taches d'aurore floues sous un cône dépoli.
+44|Material You|Palette tonale d'Android 12 et plus : conteneur pêche doux, glyphe monochrome orange profond.
+45|Fluent|Style Fluent de Windows 11 : cône en dégradé doux sur une base acrylique discrète, pensé pour la barre des tâches.
+46|Ciel étoilé|Un cône sous un ciel étoilé, avec une lueur chaude à l'horizon. Ambiance soirée ciné.
+47|Fil de fer|Maillage 3D du cône en fil de fer, lumineux sur une grille sombre. Le chic de l'ingénierie.
+48|Arc-en-ciel rétro|Un cône arc-en-ciel à six bandes, en hommage au Mac des années 1980.
+49|Ruban Lecture|Un seul ruban orange qui forme à la fois un cône et un triangle de lecture.
+50|Tahoe sombre|Le jumeau sombre de Tahoe en couches : plaque graphite, même cône en couches et même liseré.
+51|Noël|Noël · 25 déc. — un cône coiffé d'un bonnet de père Noël, bordure de fourrure et pompon, sous la neige, sur un rouge festif.
+52|Hanoukka|Hanoukka · 8 nuits en kislev — le cône devient le shamash et allume huit bougies sur un bleu profond.
+53|Réveillon du Nouvel An|Nouvel An · 31 déc. — un cône en chapeau de fête doré, feux d'artifice et confettis à minuit.
+54|Nouvel An lunaire|Nouvel An lunaire · janv.–févr. — un cône rouge et or entouré de lanternes en papier.
+55|Saint-Valentin|Saint-Valentin · 14 févr. — un cône rose bonbon et des confettis en forme de cœur.
+56|Saint-Patrick|Saint-Patrick · 17 mars — un cône vert, blanc et orange comme l'Irlande, avec un trèfle.
+57|Pâques|Pâques · mars–avr. — un cône décoré comme un œuf peint à la main, des œufs pastel à ses pieds.
+58|Ramadan|Ramadan · 9e mois — une lanterne fanous lumineuse et un croissant de lune dans une nuit paisible.
+59|Aïd el-Fitr|Aïd el-Fitr · fin du ramadan — émeraude et or, étoiles géométriques et croissant festif.
+60|Aïd el-Kébir|Aïd el-Kébir · 10 dhou al-hijja — le cône encadré d'un arc brisé chaleureux, surmonté d'un croissant.
+61|Diwali|Diwali · oct.–nov. — une rosace de rangoli, des diyas en terre cuite et un cône allumé comme une lampe.
+62|Holi|Holi · pleine lune de phalguna — explosions de poudres colorées et cône éclaboussé de couleurs.
+63|Navratri|Navratri · neuf nuits — les neuf couleurs des jours en rayons derrière un cône blanc.
+64|Roch Hachana|Roch Hachana · tichri — une douce nouvelle année : pomme, goutte de miel et bandes dorées comme le miel.
+65|Vesak|Vesak · pleine lune de vesākha — le cône qui s'élève d'un lotus sous de douces lanternes.
+66|Halloween|Halloween · 31 oct. — le cône devient un chapeau de sorcière sous une lune d'automne.
+67|Jour des Morts|Día de Muertos · 1er–2 nov. — papel picado, œillets d'Inde et une plaque magenta joyeuse.
+68|Thanksgiving|Thanksgiving · nov. — une plaque automnale chaleureuse et des feuilles qui tombent autour du cône.
+69|Fête de l'Indépendance (US)|4 Juillet · 4 juil. — un cône étoilé et rayé, feux d'artifice sur bleu marine.
+70|Fête nationale (FR)|14 Juillet — bleu, blanc, rouge : une plaque tricolore, un cône blanc et des feux d'artifice.
+71|Oktoberfest|Oktoberfest · sept.–oct., Munich — losanges bavarois, un bretzel et un cône à bandes bleues.
+72|Carnaval de Rio|Carnaval · avant le carême — un cône à plumes vert, jaune et bleu, sous les confettis.
+73|Fiertés|Mois des fiertés · juin — une plaque au drapeau Progress et un cône blanc épuré.
+74|Fête du Roi (NL)|Koningsdag · 27 avr. — les Pays-Bas se parent d'orange ; le cône reçoit enfin sa couronne.
+75|Fête du Canada|Fête du Canada · 1er juil. — la mise en page du drapeau, le cône à la place de la feuille d'érable.
+76|Nuit de Guy Fawkes (UK)|Bonfire Night · 5 nov. — traînées de cierges magiques et lueur de feu de joie.
+77|Songkran|Songkran · 13–15 avr., Nouvel An thaï — turquoise éclaboussé d'eau et cône fraîchement rincé.
+78|Norouz|Norouz · 20–21 mars, Nouvel An persan — les pousses de sabzeh du printemps autour du cône.
+79|Hanami|Hanami · saison des cerisiers, Japon — pétales rose pâle qui volent près d'un cône à bandes roses.
+80|Saint-Antoine (Lisbonne)|Santos Populares · 13 juin, Lisbonne — azulejos, sardine grillée et cône en fête.
+81|Jour de la Terre|Jour de la Terre · 22 avr. — le cône posé sur une petite planète verte et bleue.
+82|Fête de la mi-automne|Mi-automne · 15e jour du 8e mois lunaire — pleine lune, lanterne et motif de gâteau de lune.
+83|Midsommar|Midsommar · fin juin, pays nordiques — ciel de soleil de minuit et couronne de fleurs autour du cône.
+84|Plaque au trait|Plaque et cône au seul trait, orange de la marque sur quasi-noir. Discret, net, très Pro.
+85|Glitch|Cône glitché aux couches RVB décalées et lignes de balayage, ambiance VHS.
+86|Vaporwave|Coucher de soleil synthwave sur une grille néon : le cône en monument rétro-futuriste.
+87|Marbre|Plaque en marbre de Carrare veiné d'or, sous un cône doré à la feuille.
+88|Écusson brodé|Un écusson rond brodé, texture sergé : VLC version manche de blouson.
+89|Voxel|Cône isométrique en voxels, empilé de blocs orange et blancs. Très Minecraft, très lisible.
+90|Projecteur|Le faisceau d'un projecteur de théâtre se pose sur le cône. Place au spectacle.
+91|Origami|Cône en papier plié : deux plans nets et une base blanc papier.
+92|Pochoir|Pochoir de street art bombé sur un mur de briques, avec les éclaboussures de peinture.
+93|Pop tramé|Cône façon BD pop art : contours à l'encre noire sur une explosion jaune tramée.
+94|Fonte|Le cône qui fond comme une glace un jour de canicule. Surréaliste, inoubliable.
+95|Constellation|Le cône dessiné comme une constellation sur un bleu nuit profond.
+96|Tangram|Sept pièces de tangram assemblées en cône. Le charme du casse-tête.
+97|Espace négatif|Un disque orange d'où le cône est découpé net. Du pur figure-fond.
+98|Bauhaus|Composition Bauhaus en couleurs primaires : cercle, carré et cône noir.
+99|Pin's émaillé|Pin's en émail dur : contours métal doré, aplats d'émail brillant et éclat de lumière.
+100|Topographique|Des courbes de niveau qui rayonnent autour du cône, comme un sommet sur une carte de randonnée.

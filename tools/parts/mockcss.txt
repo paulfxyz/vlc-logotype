@@ -1,0 +1,66 @@
+/* ===== mockups ===== */
+.mock{position:relative;border-radius:18px;overflow:hidden;width:100%;aspect-ratio:16/8;min-height:300px}
+.lbl{font-size:13px;color:var(--mute);margin:0 0 8px}
+/* macOS */
+.mac{background:radial-gradient(120% 80% at 20% 10%,#6F7BF7 0,#3A2CB8 40%,#1B1060 75%,#0B0730 100%)}
+.mac .menubar{position:absolute;inset:0 0 auto 0;height:28px;background:rgba(255,255,255,.12);backdrop-filter:blur(20px);display:flex;align-items:center;gap:18px;padding:0 16px;font-size:13px;color:#fff;font-weight:500}
+.mac .menubar b{font-weight:700}
+.mac .dock{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);display:flex;align-items:flex-end;gap:6px;padding:7px 9px;border-radius:24px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.mac .dock .it{position:relative;width:64px;height:64px;transition:width .18s,height .18s,margin .18s}
+.mac .dock .it img{width:100%;height:100%;display:block}
+.mac .dock .it.run:after{content:"";position:absolute;left:50%;bottom:-6px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:rgba(255,255,255,.85)}
+.mac .dock .sep{width:1px;align-self:stretch;margin:6px 4px;background:rgba(255,255,255,.35)}
+.mac .dock .it.hl{width:84px;height:84px;margin-top:-20px}
+.mac .tip{position:absolute;bottom:112px;left:50%;transform:translateX(-50%);background:rgba(30,30,35,.8);color:#fff;font-size:13px;padding:4px 10px;border-radius:7px;border:1px solid rgba(255,255,255,.15)}
+/* windows */
+.win{background:radial-gradient(90% 90% at 50% 110%,#1A7BDB 0,#0B3A8A 40%,#07153A 100%)}
+.win .tb{position:absolute;inset:auto 0 0 0;height:54px;background:rgba(32,32,36,.82);backdrop-filter:blur(30px);border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;gap:4px}
+.win .ti{width:46px;height:46px;border-radius:6px;display:grid;place-items:center;position:relative}
+.win .ti img{width:30px;height:30px}
+.win .ti.act{background:rgba(255,255,255,.09)}
+.win .ti.act:after{content:"";position:absolute;bottom:2px;left:50%;width:16px;height:3px;margin-left:-8px;border-radius:3px;background:#60CDFF}
+.win .ti.run:after{content:"";position:absolute;bottom:2px;left:50%;width:6px;height:3px;margin-left:-3px;border-radius:3px;background:#9A9A9A}
+.win .clock{position:absolute;right:14px;bottom:8px;color:#fff;font-size:12px;text-align:right;line-height:1.35}
+.win .desk{position:absolute;left:22px;top:20px;display:grid;gap:18px}
+.win .desk div{width:78px;text-align:center;color:#fff;font-size:12px;text-shadow:0 1px 2px #000}
+.win .desk img{width:48px;height:48px;display:block;margin:0 auto 4px}
+/* iOS */
+.phones{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;padding:6px 0}
+.ios,.andr{width:300px;height:620px;border-radius:48px;position:relative;overflow:hidden;border:10px solid #0A0A0A;box-shadow:0 0 0 2px #2d2d33,0 30px 60px rgba(0,0,0,.5)}
+.ios{background:linear-gradient(160deg,#FF9E6B 0,#E8577E 40%,#5B3FD6 100%)}
+.ios .isl{position:absolute;top:10px;left:50%;width:96px;height:28px;margin-left:-48px;background:#000;border-radius:20px}
+.ios .sb{position:absolute;top:14px;left:28px;right:24px;display:flex;justify-content:space-between;color:#fff;font-size:14px;font-weight:600}
+.ios .home{position:absolute;top:66px;left:18px;right:18px;display:grid;grid-template-columns:repeat(4,1fr);row-gap:18px}
+.ios .app{text-align:center;color:#fff;font-size:11px;text-shadow:0 1px 2px rgba(0,0,0,.3)}
+.ios .app img{width:58px;height:58px;display:block;margin:0 auto 5px}
+.ios .dockbar{position:absolute;left:12px;right:12px;bottom:12px;height:84px;border-radius:32px;background:rgba(255,255,255,.25);backdrop-filter:blur(20px);display:flex;justify-content:space-around;align-items:center}
+.ios .dockbar img{width:58px;height:58px}
+/* Android */
+.andr{background:linear-gradient(180deg,#0F3D3A 0,#1E6F5C 50%,#E7D7B0 100%);border-radius:40px}
+.andr .sb{position:absolute;top:12px;left:24px;right:22px;display:flex;justify-content:space-between;color:#fff;font-size:13px}
+.andr .clockw{position:absolute;top:60px;left:26px;color:#fff;font-size:54px;font-weight:300;line-height:1}
+.andr .clockw small{display:block;font-size:14px;opacity:.85;margin-top:6px}
+.andr .home{position:absolute;left:14px;right:14px;bottom:150px;display:grid;grid-template-columns:repeat(4,1fr);row-gap:16px}
+.andr .app{text-align:center;color:#fff;font-size:11px}
+.andr .app img{width:56px;height:56px;display:block;margin:0 auto 5px}
+.andr .hot{position:absolute;left:14px;right:14px;bottom:64px;display:flex;justify-content:space-around}
+.andr .hot img{width:56px;height:56px}
+.andr .search{position:absolute;left:22px;right:22px;bottom:18px;height:40px;border-radius:22px;background:rgba(255,255,255,.85)}
+/* Linux GNOME */
+.lnx{background:linear-gradient(135deg,#241F31 0,#3D3846 45%,#613583 100%)}
+.lnx .top{position:absolute;inset:0 0 auto 0;height:28px;background:#000;color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.lnx .top .act{position:absolute;left:14px;display:flex;gap:4px}
+.lnx .top .act i{display:block;width:8px;height:8px;border-radius:5px;background:#fff}.lnx .top .act i:first-child{width:22px}
+.lnx .dash{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;gap:8px;padding:10px;border-radius:24px;background:rgba(40,40,46,.85)}
+.lnx .dash .it{width:58px;height:58px;position:relative;border-radius:14px;display:grid;place-items:center}
+.lnx .dash .it.act{background:rgba(255,255,255,.12)}
+.lnx .dash .it img{width:48px;height:48px}
+.lnx .dash .it.run:after{content:"";position:absolute;bottom:1px;left:50%;width:6px;height:4px;margin-left:-3px;border-radius:3px;background:#fff}
+.lnx .win2{position:absolute;left:12%;top:16%;width:52%;height:52%;border-radius:12px;background:#242424;box-shadow:0 20px 40px rgba(0,0,0,.5);overflow:hidden}
+.lnx .win2 .hb{height:40px;background:#303030;display:flex;align-items:center;padding:0 12px;gap:10px;color:#fff;font-size:13px}
+.lnx .win2 .hb img{width:22px;height:22px}
+.lnx .win2 .vid{position:absolute;inset:40px 0 0 0;background:linear-gradient(135deg,#FF8A00,#7A2A00);display:grid;place-items:center;color:#fff;font-size:40px}
+/* compare */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cmp .mock{aspect-ratio:16/6;min-height:200px}
+.cap{font-size:14px;color:var(--mute);margin:8px 0 0}

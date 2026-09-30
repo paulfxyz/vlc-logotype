@@ -85,6 +85,8 @@ Everything is live at **[paulfleury.com/vlc]({LIVE})**. Prefer not to clone? Gra
 {badge("build step", "none", "0a0a0a", "#-run-it-locally")}
 {badge("PHP", "vote endpoint", "777bb4", "vote.php", logo="php")}
 {badge("JavaScript", "vanilla", "f7df1e", "index.html", logo="javascript", logo_color="282828")}
+{badge("i18n", "EN · FR · ES · PT", "0a0a0a", "i18n/")}
+{badge("theme", "light · dark", "0a0a0a", "#-the-site")}
 {badge("Python", "generator", "3776ab", "tools/gen.py", logo="python")}
 {badge("vibe designed", "Perplexity Computer", "20808d", "#-this-is-vibe-designing", logo="perplexity")}
 
@@ -114,9 +116,9 @@ This repository is a free, unsolicited proposal to fix that.
 
 ## 🌐 The site
 
-<div align="center"><a href="{LIVE}"><img src=".github/img/site.png" alt="The voting page at paulfleury.com/vlc showing {N} concepts" width="100%"></a></div>
+<div align="center"><a href="{LIVE}"><picture><source media="(prefers-color-scheme: light)" srcset=".github/img/site-light.png"><img src=".github/img/site.png" alt="The voting page at paulfleury.com/vlc showing {N} concepts" width="100%"></picture></a></div>
 
-Open any concept to see it in the macOS Dock, a before/after, the Windows 11 taskbar, iOS and Android home screens and the GNOME dash, then vote. Filters split the {len(design)} design directions from the {len(holiday)} holiday editions.
+Open any concept to see it in the macOS Dock, a before/after, the Windows 11 taskbar, iOS and Android home screens and the GNOME dash, then vote. Filters split the {len(design)} design directions from the {len(holiday)} holiday editions. The page has a light and dark mode (it follows your system on first visit) and is fully translated into English, French, Spanish and European Portuguese, concept names and descriptions included.
 
 ---
 
@@ -211,7 +213,7 @@ The tally is public at every step, with GitHub as the audit trail:
 
 **FTP or shared hosting (what runs [paulfleury.com/vlc]({LIVE}))**
 
-1. Upload `index.html`, `icons.json`, `icons/`, `shots/`, `vote.php`, `.htaccess` and optionally `dump.zip` to one folder.
+1. Upload `index.html`, `icons.json`, `icons/`, `i18n/`, `shots/`, `vote.php`, `.htaccess`, `og.png` and optionally `dump.zip` to one folder.
 2. Make sure PHP can write to that folder, so `votes.private.php` and `counts.json` can be created on the first vote.
 
 **Vercel**
@@ -259,18 +261,20 @@ No design tool was opened for this project. Every icon, mockup and page was desi
 - **Mockups**: plain HTML and CSS inside [`index.html`](index.html). `?shot=<id>` renders the export layout.
 - **Screenshots**: [`tools/shots.py`](tools/shots.py), with Playwright.
 - **README, banner and contact sheet**: [`tools/readme.py`](tools/readme.py) rebuilds all three from `icons.json`.
-- **Page**: one file, vanilla JavaScript, no framework, no build step.
+- **Page**: one file, vanilla JavaScript, no framework. [`tools/build.py`](tools/build.py) assembles `index.html` from [`tools/index.template.html`](tools/index.template.html); the output is committed, so there is nothing to build to run it.
+- **Translations**: UI strings live in the page; concept names and descriptions live in [`i18n/`](i18n/) as `id|name|description` text files, compiled to JSON by [`tools/i18n.py`](tools/i18n.py), which fails if any concept is missing.
 
 ```
 index.html          voting page and all dock mockups
 icons.json          concept registry (id, name, family, description)
 icons/<platform>/   {N} SVGs per platform, plus raw layers
 shots/              {N} PNG mockup sheets
+i18n/               fr · es · pt translations (text source + JSON)
 vote.php            PHP vote endpoint (FTP hosting)
 votes/counts.json   committed snapshots of the public tally (the ledger)
 api/votes.js        Vercel function (Vercel Blob)
 server/server.py    standalone Python vote server
-tools/              gen.py · shots.py · readme.py · sync-votes.sh
+tools/              gen.py · shots.py · build.py · i18n.py · readme.py · sync-votes.sh
 ```
 
 ---
