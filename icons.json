@@ -1,0 +1,302 @@
+[
+ {
+  "id": "01",
+  "name": "Faithful Refresh",
+  "desc": "The current cone, finally sitting on a proper macOS squircle with a warm off-white plate.",
+  "tag": "Classic"
+ },
+ {
+  "id": "02",
+  "name": "Inverted Orange",
+  "desc": "Brand orange becomes the plate; a crisp white cone with orange stripes.",
+  "tag": "Bold"
+ },
+ {
+  "id": "03",
+  "name": "Graphite Pro",
+  "desc": "Pro-app dark graphite plate (think Final Cut / Logic) with a luminous cone.",
+  "tag": "Pro"
+ },
+ {
+  "id": "04",
+  "name": "Liquid Glass",
+  "desc": "macOS Tahoe style: frosted translucent cone floating over a warm gradient field.",
+  "tag": "Tahoe"
+ },
+ {
+  "id": "05",
+  "name": "Flat Minimal",
+  "desc": "One colour, one shape. White silhouette with a single negative stripe.",
+  "tag": "Minimal"
+ },
+ {
+  "id": "06",
+  "name": "Sunset",
+  "desc": "Orange-to-magenta evening gradient, playful and modern.",
+  "tag": "Bold"
+ },
+ {
+  "id": "07",
+  "name": "Play Cone",
+  "desc": "The cone's middle stripe is replaced by a play triangle: media player at a glance.",
+  "tag": "Concept"
+ },
+ {
+  "id": "08",
+  "name": "Soft Neumorphic",
+  "desc": "Embossed cone pressed out of a pale warm surface.",
+  "tag": "Soft"
+ },
+ {
+  "id": "09",
+  "name": "Round 3D",
+  "desc": "A true conical body with curved stripes and elliptical base.",
+  "tag": "3D"
+ },
+ {
+  "id": "10",
+  "name": "SF Line",
+  "desc": "SF Symbols-style monoline cone in white on orange; ultra-legible at 16px.",
+  "tag": "Minimal"
+ },
+ {
+  "id": "11",
+  "name": "8-Bit",
+  "desc": "Retro pixel-art cone for the nostalgic. Crisp at every integer scale.",
+  "tag": "Retro"
+ },
+ {
+  "id": "12",
+  "name": "Film Reel",
+  "desc": "The cone sits inside a film-reel ring, nodding to VLC's cinema roots.",
+  "tag": "Concept"
+ },
+ {
+  "id": "13",
+  "name": "Blueprint",
+  "desc": "Technical drawing of the cone on blueprint paper. For the engineers.",
+  "tag": "Concept"
+ },
+ {
+  "id": "14",
+  "name": "Neon Night",
+  "desc": "Glowing neon-tube cone on midnight navy. Pops in a dark dock.",
+  "tag": "Dark"
+ },
+ {
+  "id": "15",
+  "name": "Mono Tint",
+  "desc": "Built for macOS/iOS tinted & clear modes: pure greyscale that adapts to any accent.",
+  "tag": "Minimal"
+ },
+ {
+  "id": "16",
+  "name": "Top View",
+  "desc": "Abstract bird's-eye cone: concentric orange and white rings with a play core.",
+  "tag": "Concept"
+ },
+ {
+  "id": "17",
+  "name": "Studio Real",
+  "desc": "Photo-studio realism: glossy plastic, soft floor shadow, gentle vignette.",
+  "tag": "3D"
+ },
+ {
+  "id": "18",
+  "name": "Paper Cut",
+  "desc": "Layered paper look: stacked cut-outs with tiny shadows between layers.",
+  "tag": "Soft"
+ },
+ {
+  "id": "19",
+  "name": "Lens",
+  "desc": "A glass lens magnifying the cone. Media optics metaphor.",
+  "tag": "Concept"
+ },
+ {
+  "id": "20",
+  "name": "Aqua Candy",
+  "desc": "A love letter to Mac OS X Aqua: jelly-glossy cone with a big highlight.",
+  "tag": "Retro"
+ },
+ {
+  "id": "21",
+  "name": "Cone + VLC",
+  "desc": "Cone with a clean VLC wordmark underneath \u2014 helps recognition at large sizes.",
+  "tag": "Classic"
+ },
+ {
+  "id": "22",
+  "name": "Sound Waves",
+  "desc": "Cone emitting audio arcs: equal weight on audio and video playback.",
+  "tag": "Concept"
+ },
+ {
+  "id": "23",
+  "name": "Split Tone",
+  "desc": "Half light, half shadow \u2014 a graphic, poster-like cone.",
+  "tag": "Bold"
+ },
+ {
+  "id": "24",
+  "name": "On Screen",
+  "desc": "A tiny display frame with the cone inside \u2014 reads as a video player instantly.",
+  "tag": "Concept"
+ },
+ {
+  "id": "25",
+  "name": "Holo",
+  "desc": "Iridescent holographic plate with a chrome-white cone.",
+  "tag": "Bold"
+ },
+ {
+  "id": "26",
+  "name": "Hazard",
+  "desc": "Brutalist black-and-orange hazard stripes, cone knocked out in white.",
+  "tag": "Bold"
+ },
+ {
+  "id": "27",
+  "name": "Cone Button",
+  "desc": "The cone inside a circular play-button bezel, like a transport control.",
+  "tag": "Pro"
+ },
+ {
+  "id": "28",
+  "name": "Pastel",
+  "desc": "Peach-and-cream pastel palette: calm, friendly, very 2020s.",
+  "tag": "Soft"
+ },
+ {
+  "id": "29",
+  "name": "Clay 3D",
+  "desc": "Soft clay render: rounded edges, matte material, generous ambient occlusion.",
+  "tag": "3D"
+ },
+ {
+  "id": "30",
+  "name": "Tahoe Layered",
+  "desc": "Guideline-true macOS 26 icon: layered foreground, specular edge light, subtle gradient plate.",
+  "tag": "Tahoe"
+ },
+ {
+  "id": "31",
+  "name": "Ember",
+  "desc": "Dark plate with a warm ember glow rising behind a glossy cone.",
+  "tag": "Dark"
+ },
+ {
+  "id": "32",
+  "name": "Duotone",
+  "desc": "Two-tone yellow and orange, no white at all. Warm, poster-flat and very legible.",
+  "tag": "Bold"
+ },
+ {
+  "id": "33",
+  "name": "Low Poly",
+  "desc": "Faceted, low-polygon cone. Reads as 3D with only four flat shapes.",
+  "tag": "3D"
+ },
+ {
+  "id": "34",
+  "name": "Sticker",
+  "desc": "Die-cut sticker with a thick white border and a slight tilt: playful, laptop-lid energy.",
+  "tag": "Soft"
+ },
+ {
+  "id": "35",
+  "name": "Black & Gold",
+  "desc": "Luxury edition: matte black plate, brushed-gold cone. For a Pro-tier look.",
+  "tag": "Pro"
+ },
+ {
+  "id": "36",
+  "name": "Watercolour",
+  "desc": "Hand-painted feel: soft pigment blooms behind a clean cone.",
+  "tag": "Soft"
+ },
+ {
+  "id": "37",
+  "name": "Stacked Bars",
+  "desc": "Abstract cone built from five rounded bars, like an equaliser turned sideways.",
+  "tag": "Minimal"
+ },
+ {
+  "id": "38",
+  "name": "Long Shadow",
+  "desc": "Flat design classic: white cone casting a 45\u00b0 long shadow across the plate.",
+  "tag": "Minimal"
+ },
+ {
+  "id": "39",
+  "name": "Chrome",
+  "desc": "Polished liquid-metal cone with an orange reflection band.",
+  "tag": "3D"
+ },
+ {
+  "id": "40",
+  "name": "Terminal",
+  "desc": "ASCII-art cone in a terminal window, for the command-line crowd.",
+  "tag": "Retro"
+ },
+ {
+  "id": "41",
+  "name": "Monogram V",
+  "desc": "The cone flipped into a V for VLC \u2014 the stripes still say 'traffic cone'.",
+  "tag": "Concept"
+ },
+ {
+  "id": "42",
+  "name": "Mascot",
+  "desc": "A friendly cone character with eyes and a smile. Kid-friendly and memorable.",
+  "tag": "Soft"
+ },
+ {
+  "id": "43",
+  "name": "Aurora Glass",
+  "desc": "Dark glassmorphism: blurred aurora blobs under a frosted cone.",
+  "tag": "Tahoe"
+ },
+ {
+  "id": "44",
+  "name": "Material You",
+  "desc": "Android 12+ tonal palette: soft peach container, deep-orange monochrome glyph.",
+  "tag": "Minimal"
+ },
+ {
+  "id": "45",
+  "name": "Fluent",
+  "desc": "Windows 11 Fluent style: soft gradient cone with a subtle acrylic base, made for the taskbar.",
+  "tag": "Pro"
+ },
+ {
+  "id": "46",
+  "name": "Night Sky",
+  "desc": "A cone under a starry sky, with a warm glow on the horizon. Movie-night mood.",
+  "tag": "Dark"
+ },
+ {
+  "id": "47",
+  "name": "Wireframe",
+  "desc": "3D mesh wireframe of the cone, glowing on a dark grid. Engineering chic.",
+  "tag": "Concept"
+ },
+ {
+  "id": "48",
+  "name": "Retro Rainbow",
+  "desc": "Six-stripe rainbow cone, a nod to 1980s Mac heritage.",
+  "tag": "Retro"
+ },
+ {
+  "id": "49",
+  "name": "Ribbon Play",
+  "desc": "A single orange ribbon folds into a cone shape and a play triangle at once.",
+  "tag": "Concept"
+ },
+ {
+  "id": "50",
+  "name": "Tahoe Dark",
+  "desc": "Dark-mode twin of Tahoe Layered: graphite plate, same layered cone and edge light.",
+  "tag": "Tahoe"
+ }
+]

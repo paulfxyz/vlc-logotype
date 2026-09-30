@@ -1,0 +1,4 @@
+Options -Indexes
+<Files "votes.json">
+  Require all denied
+</Files>
