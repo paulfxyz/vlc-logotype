@@ -23,7 +23,7 @@ Everything is live at **[paulfleury.com/vlc](https://paulfleury.com/vlc/)**. Pre
 [![Android: adaptive circle](https://img.shields.io/badge/Android-adaptive%20circle-3ddc84?style=flat-square&labelColor=282828&logo=android&logoColor=ededed)](#-platform-exports)
 [![Windows: Fluent plate](https://img.shields.io/badge/Windows-Fluent%20plate-0078d4?style=flat-square&labelColor=282828)](#-platform-exports)
 [![Linux: GNOME dash](https://img.shields.io/badge/Linux-GNOME%20dash-0a0a0a?style=flat-square&labelColor=282828&logo=linux&logoColor=ededed)](#-platform-exports)
-[![icons: SVG](https://img.shields.io/badge/icons-SVG-ffb13b?style=flat-square&labelColor=282828)](icons/)
+[![icons: SVG · PNG · ICNS · ICO](https://img.shields.io/badge/icons-SVG%20%C2%B7%20PNG%20%C2%B7%20ICNS%20%C2%B7%20ICO-ffb13b?style=flat-square&labelColor=282828)](#-ready-to-use-icon-files)
 [![mockups: 100 PNG](https://img.shields.io/badge/mockups-100%20PNG-0a0a0a?style=flat-square&labelColor=282828)](shots/)
 [![votes: no database](https://img.shields.io/badge/votes-no%20database-ff7a00?style=flat-square&labelColor=282828)](#-voting-without-a-database)
 [![vote ledger: counts.json](https://img.shields.io/badge/vote%20ledger-counts.json-0a0a0a?style=flat-square&labelColor=282828)](votes/counts.json)
@@ -52,8 +52,9 @@ This repository is a free, unsolicited proposal to fix that.
 |---|---|---|---|
 | **1** | **100 icon concepts** | 67 design directions, from a faithful refresh to bolder ideas, plus 33 holiday editions | [`icons/`](icons/) |
 | **2** | **Platform exports** | Every concept as SVG with the macOS, iOS, Android, Windows and Linux masks, plus raw background and foreground layers | [`icons/<platform>/`](icons/) |
-| **3** | **Dock mockups** | macOS Dock, before/after, Windows 11 taskbar, iOS and Android home screens, GNOME dash | [`shots/`](shots/) |
-| **4** | **Voting page** | One static `index.html`: open a concept, see it in every dock, vote. No database | [paulfleury.com/vlc](https://paulfleury.com/vlc/) |
+| **3** | **Ready-to-use files** | `.icns`, `.ico` and transparent `.png` for Replacicon, Finder, Windows and Linux | [`icns/`](icns/) · [`ico/`](ico/) · [`png/`](png/) |
+| **4** | **Dock mockups** | macOS Dock, before/after, Windows 11 taskbar, iOS and Android home screens, GNOME dash | [`shots/`](shots/) |
+| **5** | **Voting page** | One static `index.html`: open a concept, see it in every dock, vote. No database | [paulfleury.com/vlc](https://paulfleury.com/vlc/) |
 
 > [!NOTE]
 > Concept work, not affiliated with or endorsed by VideoLAN. "VLC" and the cone are trademarks of VideoLAN. The MIT License covers the code and tooling in this repository.
@@ -238,6 +239,21 @@ Open any concept to see it in the macOS Dock, a before/after, the Windows 11 tas
 
 ---
 
+## 📦 Ready-to-use icon files
+
+Every concept also ships as raster files you can drop straight into an icon swapper, no conversion needed.
+
+| File | Folder | Use it with |
+|---|---|---|
+| `.icns` (16–1024 px) | [`icns/`](icns/) | [Replacicon](https://replacicon.app/), LiteIcon, or Finder › Get Info (select the app icon, paste) |
+| `.png` 1024×1024, transparent | [`png/macos/`](png/macos/) | Replacicon, Icon Composer, any tool that takes a PNG |
+| `.ico` (16–256 px) | [`ico/`](ico/) | Windows: shortcut › Properties › Change Icon, or Resource Hacker |
+| `.png` 512×512 | [`png/linux/`](png/linux/) | Linux: point `Icon=` in your `vlc.desktop` file at it |
+
+All of them are in [dump.zip](https://paulfleury.com/vlc/dump.zip) too. [`tools/export.py`](tools/export.py) regenerates them from the SVGs.
+
+---
+
 ## 🧩 Platform exports
 
 | Platform | Folder | Shape |
@@ -263,6 +279,8 @@ Open a concept, check it in every dock, then tap **Vote**. Tap again to undo. Ea
 
 The page picks the endpoint on its own: `vote.php` by default, `/api/votes` on `*.vercel.app`. To point it anywhere else, set `window.VOTE_API` before the main script.
 
+The header shows the running total, and the **Results** section shows the live top 3 with each concept's share of the votes, plus a plain-language explanation of how the vote and the ledger work.
+
 ### 🔗 The vote ledger
 
 The tally is public at every step, with GitHub as the audit trail:
@@ -280,7 +298,7 @@ The tally is public at every step, with GitHub as the audit trail:
 
 **FTP or shared hosting (what runs [paulfleury.com/vlc](https://paulfleury.com/vlc/))**
 
-1. Upload `index.html`, `icons.json`, `icons/`, `i18n/`, `shots/`, `vote.php`, `.htaccess`, `og.png` and optionally `dump.zip` to one folder.
+1. Upload `index.html`, `icons.json`, `icons/`, `icns/`, `ico/`, `png/`, `i18n/`, `shots/`, `vote.php`, `.htaccess`, `og.png` and optionally `dump.zip` to one folder.
 2. Make sure PHP can write to that folder, so `votes.private.php` and `counts.json` can be created on the first vote.
 
 **Vercel**
@@ -327,6 +345,7 @@ No design tool was opened for this project. Every icon, mockup and page was desi
 - **Icons**: hand-written SVG generated by [`tools/gen.py`](tools/gen.py), Python standard library only. Edit a concept, run `python3 tools/gen.py`, and every platform export updates.
 - **Mockups**: plain HTML and CSS inside [`index.html`](index.html). `?shot=<id>` renders the export layout.
 - **Screenshots**: [`tools/shots.py`](tools/shots.py), with Playwright.
+- **Raster exports**: [`tools/export.py`](tools/export.py) renders each SVG in Chromium, then Pillow writes the `.png`, `.icns` and `.ico` files.
 - **README, banner and contact sheet**: [`tools/readme.py`](tools/readme.py) rebuilds all three from `icons.json`.
 - **Page**: one file, vanilla JavaScript, no framework. [`tools/build.py`](tools/build.py) assembles `index.html` from [`tools/index.template.html`](tools/index.template.html); the output is committed, so there is nothing to build to run it.
 - **Translations**: UI strings live in the page; concept names and descriptions live in [`i18n/`](i18n/) as `id|name|description` text files, compiled to JSON by [`tools/i18n.py`](tools/i18n.py), which fails if any concept is missing.
@@ -335,13 +354,14 @@ No design tool was opened for this project. Every icon, mockup and page was desi
 index.html          voting page and all dock mockups
 icons.json          concept registry (id, name, family, description)
 icons/<platform>/   100 SVGs per platform, plus raw layers
+icns/ · ico/ · png/ ready-to-use .icns, .ico and .png files
 shots/              100 PNG mockup sheets
 i18n/               fr · es · pt translations (text source + JSON)
 vote.php            PHP vote endpoint (FTP hosting)
 votes/counts.json   committed snapshots of the public tally (the ledger)
 api/votes.js        Vercel function (Vercel Blob)
 server/server.py    standalone Python vote server
-tools/              gen.py · shots.py · build.py · i18n.py · readme.py · sync-votes.sh
+tools/              gen.py · export.py · shots.py · build.py · i18n.py · readme.py · sync-votes.sh
 ```
 
 ---
