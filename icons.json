@@ -298,5 +298,305 @@
   "name": "Tahoe Dark",
   "desc": "Dark-mode twin of Tahoe Layered: graphite plate, same layered cone and edge light.",
   "tag": "Tahoe"
+ },
+ {
+  "id": "51",
+  "name": "Christmas",
+  "desc": "Christmas \u00b7 25 Dec \u2014 a Santa-hat cone with a fur trim and pom-pom, falling snow on festive red.",
+  "tag": "Religious"
+ },
+ {
+  "id": "52",
+  "name": "Hanukkah",
+  "desc": "Hanukkah \u00b7 8 nights in Kislev \u2014 the cone as the shamash, lighting eight candles on deep blue.",
+  "tag": "Religious"
+ },
+ {
+  "id": "53",
+  "name": "New Year's Eve",
+  "desc": "New Year \u00b7 31 Dec \u2014 party-hat cone in gold, fireworks and confetti at midnight.",
+  "tag": "Seasonal"
+ },
+ {
+  "id": "54",
+  "name": "Lunar New Year",
+  "desc": "Lunar New Year \u00b7 Jan\u2013Feb \u2014 red and gold cone flanked by paper lanterns.",
+  "tag": "Seasonal"
+ },
+ {
+  "id": "55",
+  "name": "Valentine's Day",
+  "desc": "Valentine's \u00b7 14 Feb \u2014 a candy-pink cone with heart confetti.",
+  "tag": "Seasonal"
+ },
+ {
+  "id": "56",
+  "name": "St Patrick's Day",
+  "desc": "St Patrick's \u00b7 17 Mar \u2014 Irish green, white and orange cone with a shamrock.",
+  "tag": "National"
+ },
+ {
+  "id": "57",
+  "name": "Easter",
+  "desc": "Easter \u00b7 Mar\u2013Apr \u2014 a hand-painted egg-pattern cone, pastel eggs at its base.",
+  "tag": "Religious"
+ },
+ {
+  "id": "58",
+  "name": "Ramadan",
+  "desc": "Ramadan \u00b7 9th month \u2014 a glowing fanous lantern and crescent over a calm night.",
+  "tag": "Religious"
+ },
+ {
+  "id": "59",
+  "name": "Eid al-Fitr",
+  "desc": "Eid al-Fitr \u00b7 end of Ramadan \u2014 emerald and gold, geometric stars and a festive crescent.",
+  "tag": "Religious"
+ },
+ {
+  "id": "60",
+  "name": "Eid al-Adha",
+  "desc": "Eid al-Adha \u00b7 10 Dhu al-Hijjah \u2014 the cone framed in a warm, pointed arch with a crescent.",
+  "tag": "Religious"
+ },
+ {
+  "id": "61",
+  "name": "Diwali",
+  "desc": "Diwali \u00b7 Oct\u2013Nov \u2014 a rangoli bloom, clay diyas and a cone lit like a lamp.",
+  "tag": "Religious"
+ },
+ {
+  "id": "62",
+  "name": "Holi",
+  "desc": "Holi \u00b7 Phalguna full moon \u2014 bursts of coloured powder and a paint-splashed cone.",
+  "tag": "Religious"
+ },
+ {
+  "id": "63",
+  "name": "Navratri",
+  "desc": "Navratri \u00b7 nine nights \u2014 the nine day-colours as rays behind a white cone.",
+  "tag": "Religious"
+ },
+ {
+  "id": "64",
+  "name": "Rosh Hashanah",
+  "desc": "Rosh Hashanah \u00b7 Tishrei \u2014 a sweet new year: apple, honey drop and honey-gold stripes.",
+  "tag": "Religious"
+ },
+ {
+  "id": "65",
+  "name": "Vesak",
+  "desc": "Vesak \u00b7 full moon of Ves\u0101kha \u2014 the cone rising from a lotus under soft lanterns.",
+  "tag": "Religious"
+ },
+ {
+  "id": "66",
+  "name": "Halloween",
+  "desc": "Halloween \u00b7 31 Oct \u2014 the cone becomes a witch's hat under a harvest moon.",
+  "tag": "Seasonal"
+ },
+ {
+  "id": "67",
+  "name": "D\u00eda de los Muertos",
+  "desc": "D\u00eda de Muertos \u00b7 1\u20132 Nov \u2014 papel picado, marigolds and a joyful magenta plate.",
+  "tag": "National"
+ },
+ {
+  "id": "68",
+  "name": "Thanksgiving",
+  "desc": "Thanksgiving \u00b7 Nov \u2014 warm autumn plate with falling leaves around the cone.",
+  "tag": "National"
+ },
+ {
+  "id": "69",
+  "name": "Independence Day (US)",
+  "desc": "Fourth of July \u00b7 4 Jul \u2014 stars and stripes cone with fireworks over navy.",
+  "tag": "National"
+ },
+ {
+  "id": "70",
+  "name": "F\u00eate nationale (FR)",
+  "desc": "14 Juillet \u2014 bleu, blanc, rouge: a tricolore plate with a white cone and fireworks.",
+  "tag": "National"
+ },
+ {
+  "id": "71",
+  "name": "Oktoberfest",
+  "desc": "Oktoberfest \u00b7 Sep\u2013Oct, Munich \u2014 Bavarian lozenges, a pretzel and a blue-striped cone.",
+  "tag": "National"
+ },
+ {
+  "id": "72",
+  "name": "Carnaval (Rio)",
+  "desc": "Carnival \u00b7 before Lent \u2014 a feathered cone in green, yellow and blue with confetti.",
+  "tag": "National"
+ },
+ {
+  "id": "73",
+  "name": "Pride",
+  "desc": "Pride Month \u00b7 June \u2014 Progress-flag plate with a clean white cone.",
+  "tag": "Seasonal"
+ },
+ {
+  "id": "74",
+  "name": "King's Day (NL)",
+  "desc": "Koningsdag \u00b7 27 Apr \u2014 the Netherlands goes orange; the cone finally gets its crown.",
+  "tag": "National"
+ },
+ {
+  "id": "75",
+  "name": "Canada Day",
+  "desc": "Canada Day \u00b7 1 Jul \u2014 the flag's layout, with the cone standing in for the maple leaf.",
+  "tag": "National"
+ },
+ {
+  "id": "76",
+  "name": "Bonfire Night (UK)",
+  "desc": "Guy Fawkes Night \u00b7 5 Nov \u2014 sparkler trails and a bonfire glow.",
+  "tag": "National"
+ },
+ {
+  "id": "77",
+  "name": "Songkran",
+  "desc": "Songkran \u00b7 13\u201315 Apr, Thai New Year \u2014 water-splash turquoise and a freshly rinsed cone.",
+  "tag": "National"
+ },
+ {
+  "id": "78",
+  "name": "Nowruz",
+  "desc": "Nowruz \u00b7 20\u201321 Mar, Persian New Year \u2014 spring sabzeh sprouting around the cone.",
+  "tag": "National"
+ },
+ {
+  "id": "79",
+  "name": "Hanami",
+  "desc": "Hanami \u00b7 cherry-blossom season, Japan \u2014 pale pink petals drifting past a pink-striped cone.",
+  "tag": "Seasonal"
+ },
+ {
+  "id": "80",
+  "name": "Santo Ant\u00f3nio (Lisboa)",
+  "desc": "Santos Populares \u00b7 13 Jun, Lisbon \u2014 azulejo tiles, a grilled sardine and a festive cone.",
+  "tag": "National"
+ },
+ {
+  "id": "81",
+  "name": "Earth Day",
+  "desc": "Earth Day \u00b7 22 Apr \u2014 the cone standing on a small green-and-blue planet.",
+  "tag": "Seasonal"
+ },
+ {
+  "id": "82",
+  "name": "Mid-Autumn Festival",
+  "desc": "Mid-Autumn \u00b7 15th of the 8th lunar month \u2014 full moon, lantern and mooncake pattern.",
+  "tag": "Seasonal"
+ },
+ {
+  "id": "83",
+  "name": "Midsummer",
+  "desc": "Midsummer \u00b7 late June, Nordics \u2014 midnight-sun sky and a flower crown around the cone.",
+  "tag": "Seasonal"
+ },
+ {
+  "id": "84",
+  "name": "Outline Plate",
+  "desc": "Stroke-only plate and cone in brand orange on near-black. Quiet, crisp, very Pro.",
+  "tag": "Minimal"
+ },
+ {
+  "id": "85",
+  "name": "Glitch",
+  "desc": "RGB-split glitch cone with scanlines, for a VHS-era vibe.",
+  "tag": "Retro"
+ },
+ {
+  "id": "86",
+  "name": "Vaporwave",
+  "desc": "Synthwave sunset with a neon grid floor: the cone as a retro-future monument.",
+  "tag": "Retro"
+ },
+ {
+  "id": "87",
+  "name": "Marble",
+  "desc": "White Carrara marble plate with gold veining under a gilded cone.",
+  "tag": "Pro"
+ },
+ {
+  "id": "88",
+  "name": "Embroidered Patch",
+  "desc": "A stitched round patch with a twill texture \u2014 the jacket-sleeve version of VLC.",
+  "tag": "Soft"
+ },
+ {
+  "id": "89",
+  "name": "Voxel",
+  "desc": "Isometric voxel cone stacked from orange and white blocks. Very Minecraft, very readable.",
+  "tag": "3D"
+ },
+ {
+  "id": "90",
+  "name": "Spotlight",
+  "desc": "A theatre spotlight beam lands on the cone. Showtime.",
+  "tag": "Dark"
+ },
+ {
+  "id": "91",
+  "name": "Origami",
+  "desc": "Folded paper cone: two crisp planes and a paper-white base.",
+  "tag": "Soft"
+ },
+ {
+  "id": "92",
+  "name": "Stencil",
+  "desc": "Street-art stencil sprayed on a brick wall, with overspray speckle.",
+  "tag": "Bold"
+ },
+ {
+  "id": "93",
+  "name": "Halftone Pop",
+  "desc": "Pop-art comic cone: black ink outlines on a halftone yellow burst.",
+  "tag": "Bold"
+ },
+ {
+  "id": "94",
+  "name": "Melt",
+  "desc": "The cone melting like an ice-lolly on a hot day. Surreal, very memorable.",
+  "tag": "Concept"
+ },
+ {
+  "id": "95",
+  "name": "Constellation",
+  "desc": "The cone drawn as a star constellation over deep navy.",
+  "tag": "Dark"
+ },
+ {
+  "id": "96",
+  "name": "Tangram",
+  "desc": "Seven tangram pieces arranged into a cone. Puzzle-box charm.",
+  "tag": "Concept"
+ },
+ {
+  "id": "97",
+  "name": "Negative Space",
+  "desc": "An orange disc with the cone cut clean out of it. Pure figure-ground.",
+  "tag": "Minimal"
+ },
+ {
+  "id": "98",
+  "name": "Bauhaus",
+  "desc": "Primary-colour Bauhaus composition: circle, square and a black cone.",
+  "tag": "Bold"
+ },
+ {
+  "id": "99",
+  "name": "Enamel Pin",
+  "desc": "Hard-enamel pin: gold metal outlines, glossy enamel fills and a highlight glint.",
+  "tag": "Pro"
+ },
+ {
+  "id": "100",
+  "name": "Topographic",
+  "desc": "Contour-map lines radiating from the cone like a summit on a trail map.",
+  "tag": "Concept"
  }
 ]

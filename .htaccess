@@ -1,4 +1,10 @@
 Options -Indexes
-<Files "votes.json">
+<FilesMatch "^(votes\.private\.php|votes\.json)$">
   Require all denied
-</Files>
+</FilesMatch>
+<IfModule mod_headers.c>
+  <Files "counts.json">
+    Header set Cache-Control "no-store"
+    Header set Access-Control-Allow-Origin "*"
+  </Files>
+</IfModule>

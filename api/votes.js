@@ -31,10 +31,10 @@ export default async function handler(req, res) {
     }
     if (req.method === 'POST') {
       const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
-      const id = String(body.id || '').replace(/\D/g, '').padStart(2, '0').slice(-2);
-      const n = parseInt(id, 10);
+      const n = parseInt(String(body.id || '').replace(/\D/g, ''), 10);
+      const id = String(n).padStart(2, '0');
       const rawVoter = String(body.voter || '').slice(0, 64);
-      if (!(n >= 1 && n <= 50) || !rawVoter) return res.status(400).json({ error: 'bad request' });
+      if (!(n >= 1 && n <= 100) || !rawVoter) return res.status(400).json({ error: 'bad request' });
       const me = hash(rawVoter + ip);
       const path = `votes/${id}/${me}`;
       if (body.action === 'remove') {

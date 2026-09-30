@@ -6,7 +6,8 @@ import asyncio,sys
 from playwright.async_api import async_playwright
 import os
 EXE=os.environ.get('CHROME_PATH')  # optional; defaults to Playwright's bundled Chromium
-ids=sys.argv[1:] or [f"{i:02d}" for i in range(1,51)]
+import json
+ids=sys.argv[1:] or [d["id"] for d in json.load(open("icons.json"))]
 async def main():
     async with async_playwright() as p:
         b=await (p.chromium.launch(executable_path=EXE) if EXE else p.chromium.launch())

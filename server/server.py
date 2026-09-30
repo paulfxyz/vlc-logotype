@@ -25,7 +25,7 @@ class H(BaseHTTPRequestHandler):
         voter = h(i.get("voter", ""))
         with L:
             d = load()
-            if vid and 1 <= int(vid) <= 50:
+            if vid and 1 <= int(vid) <= 100:
                 lst = d["votes"].get(vid, [])
                 if i.get("action", "add") == "add":
                     if voter not in lst: lst.append(voter)

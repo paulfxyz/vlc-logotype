@@ -433,8 +433,332 @@ add("Tahoe Dark", "Dark-mode twin of Tahoe Layered: graphite plate, same layered
     soft_shadow(i, 22, 24, .5) + lg("tc50", "#FFA13A", "#FF5A00") +
     f'<g filter="url(#ds{i})">' + cone(i, "url(#tc50)", "#FFFFFF", "#E24E00", gloss=True) +
     f'<path d="{CONE}" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="5"/></g>', "Tahoe")
+# ================= 51–100: holidays + new concepts =================
+import random as _r
+def star(cx, cy, r, ri=None, n=5, rot=-90, fill="#fff", op=1):
+    ri = ri or r * .45
+    pts = []
+    for k in range(n * 2):
+        a = math.radians(rot + k * 180 / n); rr = r if k % 2 == 0 else ri
+        pts.append(f"{cx+rr*math.cos(a):.1f},{cy+rr*math.sin(a):.1f}")
+    return f'<polygon points="{" ".join(pts)}" fill="{fill}" opacity="{op}"/>'
+def heart(cx, cy, s, fill, op=1, rot=0):
+    return (f'<path transform="translate({cx} {cy}) rotate({rot}) scale({s})" d="M0,30 C-60,-10 -40,-60 0,-30 C40,-60 60,-10 0,30Z" fill="{fill}" opacity="{op}"/>')
+def crescent(uid, cx, cy, r, fill, dx=.38, dy=-.12):
+    return (f'<mask id="cm{uid}"><rect width="1024" height="1024" fill="#fff"/><circle cx="{cx+r*dx}" cy="{cy+r*dy}" r="{r*.86}" fill="#000"/></mask>'
+            f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{fill}" mask="url(#cm{uid})"/>')
+def flame(cx, cy, s, fill="#FFC53D", core="#FFF3C4"):
+    p = "M0,-60 C30,-25 34,6 0,26 C-34,6 -30,-25 0,-60Z"
+    return (f'<g transform="translate({cx} {cy}) scale({s})"><path d="{p}" fill="{fill}"/>'
+            f'<path d="{p}" fill="{core}" transform="translate(0 8) scale(.5)"/></g>')
+def confetti(seed, n, colors, x0=60, x1=964, y0=60, y1=964, w=(10, 24)):
+    _r.seed(seed); out = ""
+    for _ in range(n):
+        x, y = _r.randint(x0, x1), _r.randint(y0, y1); ww = _r.randint(*w)
+        out += f'<rect x="{x}" y="{y}" width="{ww}" height="{ww*.45:.0f}" rx="3" fill="{_r.choice(colors)}" transform="rotate({_r.randint(0,180)} {x} {y})"/>'
+    return out
+def burst(cx, cy, r, color, n=12, sw=8):
+    return ''.join(f'<path d="M{cx+r*.35*math.cos(a):.0f},{cy+r*.35*math.sin(a):.0f} L{cx+r*math.cos(a):.0f},{cy+r*math.sin(a):.0f}" stroke="{color}" stroke-width="{sw}" stroke-linecap="round"/>'
+                   for a in [k * 2 * math.pi / n for k in range(n)]) + f'<circle cx="{cx}" cy="{cy}" r="{sw}" fill="{color}"/>'
+def C(i, body=OR, stripe="#fff", basec=OR_D, s=1.0, dx=0, dy=0, **kw):
+    return f'<g transform="translate({512+dx} {512+dy}) scale({s}) translate(-512 -512)">' + cone(i, body, stripe, basec, **kw) + '</g>'
+def dots(seed, n, color, r=(3, 7), y1=964, op=(.4, 1)):
+    _r.seed(seed)
+    return ''.join(f'<circle cx="{_r.randint(40,984)}" cy="{_r.randint(40,y1)}" r="{_r.randint(*r)}" fill="{color}" opacity="{_r.uniform(*op):.2f}"/>' for _ in range(n))
+def leaf(cx, cy, s, rot, fill):
+    return f'<path transform="translate({cx} {cy}) rotate({rot}) scale({s})" d="M0,-40 C30,-20 30,20 0,40 C-30,20 -30,-20 0,-40Z M0,-40 L0,40" fill="{fill}" stroke="rgba(0,0,0,.18)" stroke-width="3"/>'
+def flower(cx, cy, r, petal, center="#FFD23F", n=5):
+    out = ''.join(f'<ellipse cx="{cx+r*.55*math.cos(a):.1f}" cy="{cy+r*.55*math.sin(a):.1f}" rx="{r*.5:.1f}" ry="{r*.36:.1f}" fill="{petal}" transform="rotate({math.degrees(a):.0f} {cx+r*.55*math.cos(a):.1f} {cy+r*.55*math.sin(a):.1f})"/>' for a in [k*2*math.pi/n for k in range(n)])
+    return out + f'<circle cx="{cx}" cy="{cy}" r="{r*.3:.1f}" fill="{center}"/>'
+def sh(i, dy=18, b=18, o=.3): return soft_shadow(i, dy, b, o)
+def G(i, inner): return f'<g filter="url(#ds{i})">{inner}</g>'
 
-assert len(designs) == 50
+H = []  # (name, desc, tag, bg, fg)
+# ---------- 33 holidays ----------
+i = 51  # Christmas
+H.append(("Christmas", "Christmas · 25 Dec — a Santa-hat cone with a fur trim and pom-pom, falling snow on festive red.", "Religious",
+    bg_grad(i, "#E0313F", "#8B0F1D") + dots(51, 55, "#fff", (4, 9)),
+    sh(i) + G(i, cone(i, "#F2F2F2", "#E0313F", "#fff", stripes=[(395, 455), (545, 610)]) +
+    '<rect x="300" y="668" width="424" height="100" rx="50" fill="#fff"/><circle cx="512" cy="232" r="46" fill="#fff"/>'
+    '<g transform="translate(700 700)"><ellipse cx="-20" cy="0" rx="34" ry="16" fill="#1E7B3A" transform="rotate(-30)"/><ellipse cx="20" cy="0" rx="34" ry="16" fill="#1E7B3A" transform="rotate(30)"/><circle cx="0" cy="-6" r="12" fill="#C8102E"/></g>')))
+i = 52  # Hanukkah
+cand = ''.join(f'<rect x="{x-14}" y="560" width="28" height="170" rx="6" fill="#E8EEF9"/>' + flame(x, 530, .75) for x in [150, 215, 280, 345, 679, 744, 809, 874])
+H.append(("Hanukkah", "Hanukkah · 8 nights in Kislev — the cone as the shamash, lighting eight candles on deep blue.", "Religious",
+    bg_grad(i, "#2548B8", "#0B1B4D") + dots(52, 30, "#fff", (2, 5), 500),
+    '<rect x="120" y="720" width="784" height="26" rx="13" fill="#C9D6F2"/>' + cand +
+    C(i, "#FFFFFF", "#2548B8", "#C9D6F2", s=.62, dy=40, shade=False) + flame(512, 330, 1.0)))
+i = 53  # New Year's Eve
+H.append(("New Year's Eve", "New Year · 31 Dec — party-hat cone in gold, fireworks and confetti at midnight.", "Seasonal",
+    bg_grad(i, "#1B1B3A", "#05050F") + burst(230, 250, 150, "#FFD54A") + burst(800, 220, 120, "#FF7AB6") + burst(820, 560, 90, "#7BD3FF", 10, 6)
+    + confetti(53, 40, ["#FFD54A", "#FF7AB6", "#7BD3FF", "#fff"]),
+    lg("ny53", "#FFE58A", "#D39B1F", 0, 0, 1, 1) + sh(i, 18, 18, .5) + G(i, cone(i, "url(#ny53)", "#1B1B3A", "#B8841A", gloss=True) + '<circle cx="512" cy="232" r="40" fill="#FFE58A"/>')))
+i = 54  # Lunar New Year
+lant = lambda x, y: (f'<path d="M{x},{y-150} V{y-80}" stroke="#E0B84A" stroke-width="6"/><rect x="{x-38}" y="{y-92}" width="76" height="18" rx="4" fill="#E0B84A"/>'
+                     f'<ellipse cx="{x}" cy="{y}" rx="80" ry="92" fill="#E3262B"/><path d="M{x},{y-92} Q{x-60},{y} {x},{y+92} M{x},{y-92} Q{x+60},{y} {x},{y+92}" stroke="#B3121A" stroke-width="5" fill="none"/>'
+                     f'<rect x="{x-38}" y="{y+86}" width="76" height="18" rx="4" fill="#E0B84A"/><path d="M{x},{y+104} V{y+170}" stroke="#E0B84A" stroke-width="10"/>')
+H.append(("Lunar New Year", "Lunar New Year · Jan–Feb — red and gold cone flanked by paper lanterns.", "Seasonal",
+    bg_grad(i, "#C8161D", "#7A0A0E") + '<circle cx="512" cy="540" r="330" fill="none" stroke="#E0B84A" stroke-width="10" opacity=".45"/><circle cx="512" cy="540" r="290" fill="none" stroke="#E0B84A" stroke-width="4" opacity=".35"/>',
+    lant(185, 330) + lant(839, 330) + sh(i, 18, 18, .45) + G(i, C(i, "#E3262B", "#F5CE5A", "#E0B84A", s=.82, dy=40, gloss=True))))
+i = 55  # Valentine's
+_r.seed(55)
+hearts = ''.join(heart(_r.randint(120, 900), _r.randint(120, 880), _r.uniform(.6, 1.3), _r.choice(["#fff", "#FF9CC2", "#FF4F8B"]), .8, _r.randint(-25, 25)) for _ in range(14))
+H.append(("Valentine's Day", "Valentine's · 14 Feb — a candy-pink cone with heart confetti.", "Seasonal",
+    bg_grad(i, "#FFB6D0", "#FF5C93") + hearts,
+    sh(i, 18, 18, .25) + G(i, cone(i, "#E8175D", "#FFD1E1", "#B80F47", gloss=True) + heart(512, 505, 1.1, "#FFD1E1"))))
+i = 56  # St Patrick's
+sham = lambda x, y, s: f'<g transform="translate({x} {y}) scale({s})">' + heart(0, -36, 1, "#0E8A4D", 1, 0) + heart(-34, 0, 1, "#0E8A4D", 1, -90) + heart(34, 0, 1, "#0E8A4D", 1, 90) + '<path d="M0,10 Q10,60 30,80" stroke="#0E8A4D" stroke-width="10" fill="none" stroke-linecap="round"/></g>'
+H.append(("St Patrick's Day", "St Patrick's · 17 Mar — Irish green, white and orange cone with a shamrock.", "National",
+    bg_grad(i, "#B9F0CF", "#5CC98A") + sham(815, 240, 1.4) + sham(210, 780, 1.0),
+    sh(i, 18, 18, .25) + G(i, cone(i, "#169B62", "#FFFFFF", "#FF883E"))))
+i = 57  # Easter
+egg = lambda x, y, s, c1, c2, rot: (f'<g transform="translate({x} {y}) rotate({rot}) scale({s})"><ellipse rx="44" ry="58" fill="{c1}"/>'
+                                    f'<path d="M-44,0 L-30,-10 L-15,0 L0,-10 L15,0 L30,-10 L44,0" stroke="{c2}" stroke-width="8" fill="none"/></g>')
+H.append(("Easter", "Easter · Mar–Apr — a hand-painted egg-pattern cone, pastel eggs at its base.", "Religious",
+    bg_grad(i, "#E3F7EE", "#BDE8F5"),
+    sh(i, 16, 16, .2) + G(i, cone(i, "#FFB27A", "#FFF", "#F38A4E", shade=False) +
+    '<clipPath id="ez57"><path d="' + CONE + '"/></clipPath><g clip-path="url(#ez57)"><path d="M300,490 L360,470 L420,490 L480,470 L540,490 L600,470 L660,490 L720,470" stroke="#9AD7F0" stroke-width="16" fill="none"/></g>'
+    + egg(250, 740, 1, "#FFD1E8", "#fff", -15) + egg(780, 745, 1.05, "#C9F2D4", "#fff", 12) + egg(170, 700, .75, "#FFF1A8", "#fff", -25))))
+i = 58  # Ramadan
+fanous = (f'<g transform="translate(250 330)"><path d="M0,-200 V-120" stroke="#E6C36A" stroke-width="6"/><path d="M-30,-120 H30 L20,-90 H-20Z" fill="#E6C36A"/>'
+          f'<path d="M-50,-90 H50 L40,60 H-40Z" fill="#E6C36A"/><path d="M-36,-78 H36 L28,48 H-28Z" fill="#FFC857" opacity=".95"/>'
+          f'<path d="M0,-78 V48 M-32,-15 H32" stroke="#B8923A" stroke-width="5"/><path d="M-40,60 H40 L0,110Z" fill="#E6C36A"/></g>')
+H.append(("Ramadan", "Ramadan · 9th month — a glowing fanous lantern and crescent over a calm night.", "Religious",
+    bg_grad(i, "#1E2A5A", "#0A0F2A") + dots(58, 40, "#fff", (2, 5), 600) + crescent(i, 780, 230, 110, "#F6D77A"),
+    fanous + sh(i, 18, 18, .5) + G(i, C(i, OR, "#F6D77A", "#C9702A", s=.78, dx=90, dy=60, gloss=True))))
+i = 59  # Eid al-Fitr
+tile = ''.join(star(x, y, 34, 24, 8, -90, "#E6C36A", .35) for x in range(64, 1024, 128) for y in range(64, 1024, 128))
+H.append(("Eid al-Fitr", "Eid al-Fitr · end of Ramadan — emerald and gold, geometric stars and a festive crescent.", "Religious",
+    bg_grad(i, "#0F7A54", "#064431") + tile + crescent(i, 790, 230, 100, "#F2D27A"),
+    sh(i, 18, 18, .45) + G(i, cone(i, "#F7F2E4", "#0F7A54", "#E6C36A", gloss=True))))
+i = 60  # Eid al-Adha
+arch = "M232,900 V430 Q232,200 512,150 Q792,200 792,430 V900 Z"
+H.append(("Eid al-Adha", "Eid al-Adha · 10 Dhu al-Hijjah — the cone framed in a warm, pointed arch with a crescent.", "Religious",
+    bg_grad(i, "#F5E1B8", "#D9A95B"),
+    f'<path d="{arch}" fill="#FFF8EA"/><path d="{arch}" fill="none" stroke="#B9822F" stroke-width="18"/>' + crescent(i, 512, 270, 44, "#B9822F", .4, -.2)
+    + sh(i, 14, 14, .25) + G(i, C(i, OR, "#fff", OR_D, s=.72, dy=90))))
+i = 61  # Diwali
+diya = lambda x, y: f'<path d="M{x-58},{y} Q{x},{y+70} {x+58},{y} Z" fill="#C8561C"/><path d="M{x-58},{y} H{x+58}" stroke="#F2A541" stroke-width="8"/>' + flame(x, y - 30, .7)
+rang = ''.join(f'<ellipse cx="512" cy="330" rx="40" ry="130" fill="{c}" transform="rotate({k*30} 512 470)" opacity=".85"/>' for k, c in enumerate(["#FF4F8B", "#FFC53D", "#2EC4B6", "#9B5DE5"] * 3))
+H.append(("Diwali", "Diwali · Oct–Nov — a rangoli bloom, clay diyas and a cone lit like a lamp.", "Religious",
+    bg_grad(i, "#4A1257", "#1C0622") + rang + '<circle cx="512" cy="470" r="120" fill="#4A1257"/>',
+    ''.join(diya(x, 840) for x in [150, 330, 694, 874]) + sh(i, 16, 16, .5) + G(i, C(i, OR, "#FFE08A", "#C8561C", s=.72, dy=10, gloss=True)) + flame(512, 190, .9)))
+i = 62  # Holi
+H.append(("Holi", "Holi · Phalguna full moon — bursts of coloured powder and a paint-splashed cone.", "Religious",
+    '<filter id="hb62"><feGaussianBlur stdDeviation="45"/></filter><rect width="1024" height="1024" fill="#FFFDF7"/><g filter="url(#hb62)">'
+    '<circle cx="230" cy="250" r="190" fill="#FF3DA5"/><circle cx="800" cy="260" r="180" fill="#FFC300"/><circle cx="220" cy="800" r="190" fill="#00C2A8"/><circle cx="810" cy="790" r="190" fill="#7B4DFF"/></g>',
+    sh(i, 16, 16, .2) + G(i, cone(i, OR, "#FF3DA5", "#7B4DFF", stripes=[(395, 455), (545, 610)]) + '<circle cx="450" cy="600" r="22" fill="#00C2A8"/><circle cx="590" cy="440" r="18" fill="#FFC300"/><circle cx="560" cy="660" r="14" fill="#fff"/>')))
+i = 63  # Navratri
+nine = ["#E53935", "#1E88E5", "#FDD835", "#43A047", "#9E9E9E", "#FB8C00", "#FFFFFF", "#EC407A", "#6A1B9A"]
+H.append(("Navratri", "Navratri · nine nights — the nine day-colours as rays behind a white cone.", "Religious",
+    '<rect width="1024" height="1024" fill="#1A1033"/>' + ''.join(f'<path d="M512,760 L{512+900*math.cos(math.radians(200+k*15.5)):.0f},{760+900*math.sin(math.radians(200+k*15.5)):.0f} L{512+900*math.cos(math.radians(213+k*15.5)):.0f},{760+900*math.sin(math.radians(213+k*15.5)):.0f}Z" fill="{c}"/>' for k, c in enumerate(nine)),
+    sh(i, 18, 18, .45) + G(i, cone(i, "#FFFFFF", "#E53935", "#FDD835"))))
+i = 64  # Rosh Hashanah
+H.append(("Rosh Hashanah", "Rosh Hashanah · Tishrei — a sweet new year: apple, honey drop and honey-gold stripes.", "Religious",
+    bg_grad(i, "#FFF6E0", "#FFE0A3"),
+    '<circle cx="780" cy="720" r="95" fill="#D7263D"/><circle cx="740" cy="690" r="28" fill="#fff" opacity=".35"/><path d="M780,625 Q790,590 815,580" stroke="#6B3E1F" stroke-width="12" fill="none" stroke-linecap="round"/><ellipse cx="835" cy="600" rx="30" ry="14" fill="#3E9B4F" transform="rotate(-20 835 600)"/>'
+    '<path d="M235,240 C265,300 280,330 280,355 A45,45 0 0 1 190,355 C190,330 205,300 235,240Z" fill="#F4A300"/>'
+    + sh(i, 16, 16, .22) + G(i, C(i, OR, "#FFD36B", OR_D, s=.85, dx=-40))))
+i = 65  # Vesak
+lotus = ''.join(f'<ellipse cx="512" cy="700" rx="50" ry="130" fill="{c}" transform="rotate({a} 512 780)"/>' for a, c in [(-60, "#F7B4D2"), (60, "#F7B4D2"), (-30, "#F59AC3"), (30, "#F59AC3"), (0, "#F287B7")])
+H.append(("Vesak", "Vesak · full moon of Vesākha — the cone rising from a lotus under soft lanterns.", "Religious",
+    bg_grad(i, "#3B2E7A", "#141033") + '<circle cx="512" cy="360" r="300" fill="#FFE9A8" opacity=".12"/>' + dots(65, 18, "#FFD27A", (8, 14), 420),
+    lotus + sh(i, 16, 16, .4) + G(i, C(i, OR, "#FFF3D6", OR_D, s=.66, dy=-40, gloss=True))))
+i = 66  # Halloween
+bat = lambda x, y, s: f'<path transform="translate({x} {y}) scale({s})" d="M0,0 Q-20,-20 -40,-10 Q-50,-30 -80,-20 Q-60,0 -70,20 Q-40,10 -20,20 Q-10,10 0,20 Q10,10 20,20 Q40,10 70,20 Q60,0 80,-20 Q50,-30 40,-10 Q20,-20 0,0Z" fill="#120A1F"/>'
+H.append(("Halloween", "Halloween · 31 Oct — the cone becomes a witch's hat under a harvest moon.", "Seasonal",
+    bg_grad(i, "#5B2A86", "#1A0B2E") + '<circle cx="740" cy="280" r="150" fill="#FFB347"/>' + bat(300, 250, 1.3) + bat(820, 520, .9) + bat(200, 480, .8),
+    sh(i, 18, 18, .5) + G(i, '<ellipse cx="512" cy="720" rx="300" ry="54" fill="#1B1025"/>' +
+    cone(i, "#241536", OR, "#241536", stripes=[(590, 640)], base='<rect x="0" y="0" width="0" height="0"/>', cone_d="M470,250 Q520,200 560,280 L690,700 L334,700 Z") +
+    '<rect x="470" y="585" width="84" height="62" rx="8" fill="none" stroke="#FFD27A" stroke-width="10"/>')))
+i = 67  # Día de los Muertos
+pic = ''.join(f'<path d="M{x},60 H{x+128} V170 L{x+96},150 L{x+64},170 L{x+32},150 L{x},170Z" fill="{c}"/>' for x, c in zip(range(0, 1024, 128), ["#FF4F8B", "#FFC53D", "#2EC4B6", "#9B5DE5"] * 2))
+H.append(("Día de los Muertos", "Día de Muertos · 1–2 Nov — papel picado, marigolds and a joyful magenta plate.", "National",
+    bg_grad(i, "#D6247A", "#7E0E4A") + '<path d="M0,60 H1024" stroke="#fff" stroke-width="4"/>' + pic,
+    ''.join(flower(x, y, 64, "#FF9F1C", "#E65100", 10) for x, y in [(190, 780), (840, 790), (150, 560), (880, 560)]) + sh(i, 18, 18, .4) + G(i, C(i, OR, "#fff", OR_D, s=.85, dy=40))))
+i = 68  # Thanksgiving
+_r.seed(68)
+lvs = ''.join(leaf(_r.randint(100, 920), _r.randint(100, 900), _r.uniform(1, 1.8), _r.randint(0, 360), _r.choice(["#C0392B", "#E67E22", "#F1C40F", "#8E4B1F"])) for _ in range(16))
+H.append(("Thanksgiving", "Thanksgiving · Nov — warm autumn plate with falling leaves around the cone.", "National",
+    bg_grad(i, "#F6D7A7", "#D98B3A") + lvs,
+    sh(i, 18, 18, .3) + G(i, cone(i, "#E0621B", "#FFF3E0", "#8E4B1F"))))
+i = 69  # July 4th
+H.append(("Independence Day (US)", "Fourth of July · 4 Jul — stars and stripes cone with fireworks over navy.", "National",
+    bg_grad(i, "#1F3A93", "#0A1640") + burst(220, 240, 140, "#fff") + burst(810, 250, 130, "#E23B3B") + ''.join(star(x, y, 18, 8, 5, -90, "#fff", .6) for x, y in [(160, 600), (880, 620), (820, 850), (200, 860), (512, 150)]),
+    sh(i, 18, 18, .5) + G(i, cone(i, "#E23B3B", "#FFFFFF", "#1F3A93", stripes=[(330, 380), (440, 490), (550, 600)]) + ''.join(star(x, 730, 16, 7, 5, -90, "#fff") for x in range(360, 680, 60)))))
+i = 70  # Bastille Day
+H.append(("Fête nationale (FR)", "14 Juillet — bleu, blanc, rouge: a tricolore plate with a white cone and fireworks.", "National",
+    '<rect width="341" height="1024" fill="#1F3FAE"/><rect x="341" width="342" height="1024" fill="#FFFFFF"/><rect x="683" width="341" height="1024" fill="#E1242E"/>' + burst(170, 220, 110, "#FFD54A", 12, 7) + burst(854, 230, 110, "#FFD54A", 12, 7),
+    sh(i, 18, 18, .3) + G(i, cone(i, "#F4F4F4", "#1F3FAE", "#E1242E", stripes=[(395, 455), (545, 610)]))))
+i = 71  # Oktoberfest
+loz = ''.join(f'<path d="M{x},{y-60} L{x+45},{y} L{x},{y+60} L{x-45},{y}Z" fill="#2F7DE1"/>' for x in range(0, 1100, 90) for y in range(0, 1100, 120)) + \
+      ''.join(f'<path d="M{x+45},{y} L{x+90},{y+60} L{x+45},{y+120} L{x},{y+60}Z" fill="#2F7DE1"/>' for x in range(0, 1100, 90) for y in range(0, 1100, 120))
+pretzel = '<g transform="translate(790 790)" fill="none" stroke="#8B4A1C" stroke-width="26" stroke-linecap="round"><path d="M-70,40 C-110,-30 -60,-90 0,-30 C60,-90 110,-30 70,40 M-70,40 L40,-40 M70,40 L-40,-40"/></g>'
+H.append(("Oktoberfest", "Oktoberfest · Sep–Oct, Munich — Bavarian lozenges, a pretzel and a blue-striped cone.", "National",
+    '<rect width="1024" height="1024" fill="#FFFFFF"/>' + loz, sh(i, 18, 18, .35) + G(i, C(i, OR, "#FFFFFF", "#2A5DB0", s=.9, dy=-20, stripe_c=None) if False else cone(i, OR, "#fff", "#2A5DB0")) + pretzel))
+i = 72  # Carnival
+feather = lambda rot, c: f'<ellipse cx="512" cy="330" rx="60" ry="220" fill="{c}" transform="rotate({rot} 512 620)" opacity=".9"/>'
+H.append(("Carnaval (Rio)", "Carnival · before Lent — a feathered cone in green, yellow and blue with confetti.", "National",
+    bg_grad(i, "#00A859", "#006B3A") + ''.join(feather(r, c) for r, c in [(-50, "#FFDF00"), (-25, "#3E4095"), (0, "#FFDF00"), (25, "#3E4095"), (50, "#FFDF00")]) + confetti(72, 50, ["#FFDF00", "#fff", "#FF4F8B", "#3E4095"]),
+    sh(i, 18, 18, .4) + G(i, C(i, OR, "#FFDF00", OR_D, s=.8, dy=80, gloss=True))))
+i = 73  # Pride
+pr = ["#E40303", "#FF8C00", "#FFED00", "#008026", "#004DFF", "#750787"]
+chev = [("#FFFFFF", 0), ("#FFAFC8", 60), ("#74D7EE", 120), ("#613915", 180), ("#000000", 240)]
+H.append(("Pride", "Pride Month · June — Progress-flag plate with a clean white cone.", "Seasonal",
+    ''.join(f'<rect y="{k*171}" width="1024" height="172" fill="{c}"/>' for k, c in enumerate(pr)) + ''.join(f'<path d="M{-300+o},0 L{212+o},512 L{-300+o},1024 L{-420+o},1024 L{92+o},512 L{-420+o},0Z" fill="{c}"/>' for c, o in chev[::-1]),
+    sh(i, 18, 18, .35) + G(i, C(i, "#FFFFFF", "#F2F2F2", "#FFFFFF", s=.86, dx=90, shade=True))))
+i = 74  # King's Day
+crown = '<g transform="translate(512 215)"><path d="M-110,40 L-120,-60 L-60,-10 L0,-80 L60,-10 L120,-60 L110,40Z" fill="#F7C948" stroke="#C99A1E" stroke-width="8" stroke-linejoin="round"/><circle cx="0" cy="-80" r="14" fill="#E1242E"/><circle cx="-120" cy="-60" r="12" fill="#1F3FAE"/><circle cx="120" cy="-60" r="12" fill="#1F3FAE"/></g>'
+H.append(("King's Day (NL)", "Koningsdag · 27 Apr — the Netherlands goes orange; the cone finally gets its crown.", "National",
+    bg_grad(i, "#FF9A1F", "#FF5E00"), sh(i, 18, 18, .3) + G(i, C(i, "#FFFFFF", "#FF6F00", "#F1ECE6", s=.86, dy=60, shade=False) + crown)))
+i = 75  # Canada Day
+H.append(("Canada Day", "Canada Day · 1 Jul — the flag's layout, with the cone standing in for the maple leaf.", "National",
+    '<rect width="1024" height="1024" fill="#fff"/><rect width="256" height="1024" fill="#D52B1E"/><rect x="768" width="256" height="1024" fill="#D52B1E"/>',
+    C(i, "#D52B1E", "#FFFFFF", "#A51F15", s=.78, shade=False)))
+i = 76  # Bonfire Night
+fire = ''.join(f'<path transform="translate({x} 860) scale({s})" d="M0,-160 C60,-90 70,-20 0,20 C-70,-20 -60,-90 0,-160Z" fill="{c}"/>' for x, s, c in [(420, 1.1, "#FF5A00"), (600, 1.2, "#FF5A00"), (512, 1.5, "#FF8A00"), (512, .9, "#FFD54A")])
+H.append(("Bonfire Night (UK)", "Guy Fawkes Night · 5 Nov — sparkler trails and a bonfire glow.", "National",
+    bg_grad(i, "#1A1030", "#060310") + burst(220, 230, 130, "#FFD54A") + burst(820, 280, 100, "#8FE3FF", 10, 6) + '<ellipse cx="512" cy="900" rx="520" ry="160" fill="#FF6A00" opacity=".35"/>' + fire,
+    sh(i, 18, 18, .5) + G(i, C(i, OR, "#fff", OR_D, s=.72, dy=-40, gloss=True))))
+i = 77  # Songkran
+drops = ''.join(f'<path transform="translate({x} {y}) scale({s})" d="M0,-40 C20,-10 26,10 0,26 C-26,10 -20,-10 0,-40Z" fill="#fff" opacity=".85"/>' for x, y, s in [(200, 260, 1.2), (820, 220, 1), (870, 600, 1.3), (160, 640, .9), (700, 120, .7), (300, 880, .8)])
+H.append(("Songkran", "Songkran · 13–15 Apr, Thai New Year — water-splash turquoise and a freshly rinsed cone.", "National",
+    bg_grad(i, "#3DD6E0", "#0E88B5") + '<path d="M0,760 Q256,690 512,760 T1024,760 V1024 H0Z" fill="#fff" opacity=".25"/>' + drops,
+    sh(i, 18, 18, .3) + G(i, cone(i, OR, "#E6FBFF", OR_D, gloss=True))))
+i = 78  # Nowruz
+_r.seed(78)
+grass = ''.join(f'<path d="M{x},790 Q{x+_r.randint(-20,20)},{720-_r.randint(0,40)} {x+_r.randint(-30,30)},{660-_r.randint(0,60)}" stroke="{_r.choice(["#5BBF3A", "#3E9B2A", "#7ED957"])}" stroke-width="10" fill="none" stroke-linecap="round"/>' for x in range(250, 780, 16))
+H.append(("Nowruz", "Nowruz · 20–21 Mar, Persian New Year — spring sabzeh sprouting around the cone.", "National",
+    bg_grad(i, "#E8F8D8", "#A7DDB0") + ''.join(flower(x, y, 40, "#FF9EC4", "#FFE066") for x, y in [(180, 220), (860, 260), (820, 480)]),
+    grass + '<rect x="230" y="780" width="564" height="80" rx="40" fill="#C9A26B"/>' + sh(i, 14, 14, .25) + G(i, C(i, OR, "#fff", OR_D, s=.66, dy=-70))))
+i = 79  # Hanami
+H.append(("Hanami", "Hanami · cherry-blossom season, Japan — pale pink petals drifting past a pink-striped cone.", "Seasonal",
+    bg_grad(i, "#FFF0F5", "#FFC9DC") + ''.join(flower(x, y, s, "#FF9EC4", "#E0457B") for x, y, s in [(170, 200, 70), (860, 190, 60), (880, 520, 50), (150, 560, 46), (280, 860, 40), (790, 850, 56)]),
+    sh(i, 16, 16, .2) + G(i, cone(i, OR, "#FFD6E6", OR_D))))
+i = 80  # Santo António (Lisbon)
+az = ''.join(f'<g transform="translate({x} {y})"><rect width="128" height="128" fill="#F4F7FC"/><path d="M64,10 L118,64 L64,118 L10,64Z" fill="none" stroke="#1D4E9E" stroke-width="8"/><circle cx="64" cy="64" r="18" fill="#1D4E9E"/><path d="M0,0 L24,0 L0,24Z M128,0 L104,0 L128,24Z M0,128 L24,128 L0,104Z M128,128 L104,128 L128,104Z" fill="#1D4E9E"/></g>' for x in range(0, 1024, 128) for y in range(0, 1024, 128))
+sard = '<g transform="translate(800 820) rotate(-20)"><ellipse rx="110" ry="34" fill="#9FB3C8"/><path d="M100,0 L160,-40 L160,40Z" fill="#9FB3C8"/><circle cx="-70" cy="-6" r="7" fill="#1D2B3A"/><path d="M-40,-20 Q0,-30 60,-18" stroke="#6E8399" stroke-width="5" fill="none"/></g>'
+H.append(("Santo António (Lisboa)", "Santos Populares · 13 Jun, Lisbon — azulejo tiles, a grilled sardine and a festive cone.", "National",
+    az, sh(i, 18, 18, .35) + G(i, cone(i, OR, "#fff", OR_D)) + sard))
+i = 81  # Earth Day
+H.append(("Earth Day", "Earth Day · 22 Apr — the cone standing on a small green-and-blue planet.", "Seasonal",
+    bg_grad(i, "#DFF6FF", "#9DDCF5"),
+    '<circle cx="512" cy="1080" r="480" fill="#2E86DE"/><path d="M160,760 Q260,650 380,700 Q450,730 430,800 Q400,860 300,860Z M620,690 Q760,640 860,740 Q800,800 700,780 Q640,760 620,690Z" fill="#3FBF6F"/>'
+    + sh(i, 14, 14, .25) + G(i, C(i, OR, "#fff", OR_D, s=.72, dy=-60)) + leaf(790, 250, 1.6, 30, "#3FBF6F") + leaf(230, 300, 1.3, -40, "#56D17E")))
+i = 82  # Mid-Autumn
+H.append(("Mid-Autumn Festival", "Mid-Autumn · 15th of the 8th lunar month — full moon, lantern and mooncake pattern.", "Seasonal",
+    bg_grad(i, "#16244F", "#070D22") + '<circle cx="512" cy="430" r="330" fill="#FFE39A"/><circle cx="512" cy="430" r="330" fill="none" stroke="#F2C35E" stroke-width="10" stroke-dasharray="40 18"/>' + dots(82, 30, "#fff", (2, 4), 1000, (.3, .8)),
+    lant(170, 420) + sh(i, 16, 16, .45) + G(i, C(i, OR, "#FFF2CC", OR_D, s=.8, dy=40, gloss=True))))
+i = 83  # Midsummer
+crownf = ''.join(flower(512 + 170 * math.cos(a), 700 + 50 * math.sin(a), 38, c, "#FFE066") for a, c in zip([k * 2 * math.pi / 9 for k in range(9)], ["#fff", "#8FB8FF", "#FFD23F", "#FF9EC4"] * 3))
+H.append(("Midsummer", "Midsummer · late June, Nordics — midnight-sun sky and a flower crown around the cone.", "Seasonal",
+    lg("ms83", "#7EC8FF", "#FFE6A8") + '<rect width="1024" height="1024" fill="url(#ms83)"/><rect y="820" width="1024" height="204" fill="#6FBF5A"/>',
+    sh(i, 16, 16, .25) + G(i, cone(i, OR, "#fff", OR_D)) + '<ellipse cx="512" cy="700" rx="170" ry="50" fill="none" stroke="#3E9B2A" stroke-width="12"/>' + crownf))
+
+# ---------- 17 new concepts ----------
+i = 84
+H.append(("Outline Plate", "Stroke-only plate and cone in brand orange on near-black. Quiet, crisp, very Pro.", "Minimal",
+    '<rect width="1024" height="1024" fill="#111113"/>' + f'<path d="{squircle(512,512,420)}" fill="none" stroke="#FF7A00" stroke-width="18"/>',
+    f'<g fill="none" stroke="#FF7A00" stroke-width="30" stroke-linejoin="round" stroke-linecap="round"><path d="{cone_path(290, 680, 160)}"/><path d="M320,720 H704"/><path d="M440,450 H584"/><path d="M405,570 H619"/></g>'))
+i = 85
+H.append(("Glitch", "RGB-split glitch cone with scanlines, for a VHS-era vibe.", "Retro",
+    '<rect width="1024" height="1024" fill="#0A0A0C"/>' + ''.join(f'<rect y="{y}" width="1024" height="3" fill="#fff" opacity=".05"/>' for y in range(0, 1024, 12)),
+    f'<g style="mix-blend-mode:screen"><g transform="translate(-22 0)">{cone(851, "#00E5FF", "#0A0A0C", "#00E5FF", shade=False)}</g><g transform="translate(22 0)">{cone(852, "#FF2BD6", "#0A0A0C", "#FF2BD6", shade=False)}</g></g>'
+    + cone(i, "#FFFFFF", "#0A0A0C", "#FFFFFF", shade=False) + '<rect x="300" y="500" width="440" height="20" fill="#0A0A0C"/><rect x="340" y="505" width="200" height="10" fill="#00E5FF"/>'))
+i = 86
+H.append(("Vaporwave", "Synthwave sunset with a neon grid floor: the cone as a retro-future monument.", "Retro",
+    lg("vw86", "#2B0B5A", "#FF3CAC") + '<rect width="1024" height="1024" fill="url(#vw86)"/>' + lg("sn86", "#FFE259", "#FF3CAC") + '<circle cx="512" cy="520" r="280" fill="url(#sn86)"/>' +
+    ''.join(f'<rect y="{y}" width="1024" height="{h}" fill="#5A1A8A"/>' for y, h in [(560, 14), (610, 18), (660, 22)]) + '<rect y="700" width="1024" height="324" fill="#1A0535"/>' +
+    ''.join(f'<path d="M512,700 L{x},1024" stroke="#FF3CAC" stroke-width="4"/>' for x in range(-600, 1700, 160)) + ''.join(f'<path d="M0,{y} H1024" stroke="#FF3CAC" stroke-width="4"/>' for y in [730, 780, 850, 950]),
+    C(i, "#1A0535", "#FF3CAC", "#FF3CAC", s=.78, dy=40, shade=False, stroke="#00F0FF", sw=10)))
+i = 87
+H.append(("Marble", "White Carrara marble plate with gold veining under a gilded cone.", "Pro",
+    '<filter id="mb87"><feTurbulence type="fractalNoise" baseFrequency=".008 .02" numOctaves="4" seed="9"/><feColorMatrix values="0 0 0 0 .55  0 0 0 0 .55  0 0 0 0 .58  0 0 0 -2.2 1.35"/></filter>'
+    '<rect width="1024" height="1024" fill="#F7F5F2"/><rect width="1024" height="1024" filter="url(#mb87)" opacity=".7"/>',
+    lg("mg87", "#F9E3A1", "#B98A2E", 0, 0, 1, 1) + sh(i, 16, 16, .3) + G(i, cone(i, "url(#mg87)", "#FFFFFF", "#9A7224", gloss=True))))
+i = 88
+H.append(("Embroidered Patch", "A stitched round patch with a twill texture — the jacket-sleeve version of VLC.", "Soft",
+    '<rect width="1024" height="1024" fill="#2B3A55"/>',
+    '<circle cx="512" cy="512" r="370" fill="#FF7A00"/><circle cx="512" cy="512" r="370" fill="none" stroke="#FFD2A6" stroke-width="30"/><circle cx="512" cy="512" r="330" fill="none" stroke="#fff" stroke-width="6" stroke-dasharray="18 12"/>'
+    + ''.join(f'<path d="M{x},150 L{x-300},870" stroke="#000" stroke-opacity=".05" stroke-width="6"/>' for x in range(300, 1200, 22))
+    + C(i, "#FFFFFF", "#FF7A00", "#FFFFFF", s=.72, shade=False, stroke="#E55A00", sw=6)))
+i = 89
+def cube(x, y, s, top, left, right):
+    return (f'<path d="M{x},{y} L{x+s},{y-s*.5} L{x+2*s},{y} L{x+s},{y+s*.5}Z" fill="{top}"/>'
+            f'<path d="M{x},{y} L{x+s},{y+s*.5} L{x+s},{y+s*1.5} L{x},{y+s}Z" fill="{left}"/>'
+            f'<path d="M{x+s},{y+s*.5} L{x+2*s},{y} L{x+2*s},{y+s} L{x+s},{y+s*1.5}Z" fill="{right}"/>')
+vox = ''
+for lvl, (n, col) in enumerate([(4, "o"), (3, "w"), (3, "o"), (2, "w"), (1, "o")]):
+    s = 64; y = 690 - lvl * 92
+    c = ("#FFA64D", "#FF7A00", "#C85200") if col == "o" else ("#FFFFFF", "#E6E6E6", "#BDBDBD")
+    for k in range(n):
+        vox += cube(512 - n * s + k * 2 * s, y, s, *c)
+H.append(("Voxel", "Isometric voxel cone stacked from orange and white blocks. Very Minecraft, very readable.", "3D",
+    bg_grad(i, "#EAF2FF", "#BFD3F2"), '<ellipse cx="512" cy="860" rx="260" ry="50" fill="#000" opacity=".12"/>' + vox))
+i = 90
+H.append(("Spotlight", "A theatre spotlight beam lands on the cone. Showtime.", "Dark",
+    '<rect width="1024" height="1024" fill="#0B0B0E"/>' + lg("sp90", "#FFF6D6", "#FFF6D6") .replace('stop-color="#FFF6D6"/></linearGradient>', 'stop-color="#FFF6D6" stop-opacity="0"/></linearGradient>')
+    + '<path d="M430,0 H594 L860,800 H164Z" fill="url(#sp90)" opacity=".35"/><ellipse cx="512" cy="780" rx="340" ry="70" fill="#FFF6D6" opacity=".25"/>',
+    sh(i, 16, 16, .6) + G(i, cone(i, OR, "#fff", OR_D, gloss=True))))
+i = 91
+H.append(("Origami", "Folded paper cone: two crisp planes and a paper-white base.", "Soft",
+    bg_grad(i, "#F2EFEA", "#DCD6CC"),
+    '<filter id="og91"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-opacity=".22"/></filter><g filter="url(#og91)">'
+    '<path d="M512,220 L512,720 L320,720Z" fill="#FF8A1F"/><path d="M512,220 L704,720 L512,720Z" fill="#E0600A"/>'
+    '<path d="M512,420 L570,570 L454,570Z" fill="#FFF" opacity=".92"/><path d="M512,420 L570,570 L512,570Z" fill="#E9E4DC"/>'
+    '<path d="M290,720 H734 L700,790 H324Z" fill="#FAF8F5"/></g>'))
+i = 92
+H.append(("Stencil", "Street-art stencil sprayed on a brick wall, with overspray speckle.", "Bold",
+    '<rect width="1024" height="1024" fill="#8E3B2A"/>' + ''.join(f'<rect x="{(x + (y//64)%2*64)}" y="{y}" width="124" height="58" rx="4" fill="#A5503C"/>' for x in range(-64, 1024, 128) for y in range(0, 1024, 64)),
+    '<filter id="spr92"><feTurbulence baseFrequency=".9" numOctaves="1" seed="3"/><feDisplacementMap in="SourceGraphic" scale="14"/></filter>'
+    '<g filter="url(#spr92)">' + cone(i, "#FF8A00", "#8E3B2A", "#FF8A00", shade=False) + '</g>' + dots(92, 80, "#FF8A00", (2, 4), 1000, (.3, .7))))
+i = 93
+H.append(("Halftone Pop", "Pop-art comic cone: black ink outlines on a halftone yellow burst.", "Bold",
+    '<rect width="1024" height="1024" fill="#FFE14D"/>' + ''.join(f'<circle cx="{x}" cy="{y}" r="{5 + (x+y)%1024/90:.1f}" fill="#FF6A3D" opacity=".55"/>' for x in range(0, 1040, 40) for y in range(0, 1040, 40)),
+    cone(i, "#FF7A00", "#FFFFFF", "#FF5500", shade=False, stroke="#111", sw=22)))
+i = 94
+drip = "M334,700 L690,700 L690,760 Q690,800 670,800 Q650,800 650,760 L650,740 Q640,860 610,860 Q580,860 580,780 L560,740 Q550,900 520,900 Q490,900 490,780 L460,740 Q450,820 420,820 Q395,820 395,760 L380,740 Q370,790 350,790 Q334,790 334,760Z"
+H.append(("Melt", "The cone melting like an ice-lolly on a hot day. Surreal, very memorable.", "Concept",
+    bg_grad(i, "#FFF1D6", "#FFD39A"),
+    f'<path d="{drip}" fill="{OR_D}"/>' + cone(i, OR, "#fff", OR_D, base='<rect x="0" y="0" width="0" height="0"/>') + '<ellipse cx="520" cy="930" rx="90" ry="18" fill="#E35A00" opacity=".6"/>'))
+i = 95
+pts = [(512, 240), (440, 430), (584, 430), (400, 560), (624, 560), (350, 700), (512, 700), (674, 700)]
+lines = [(0, 1), (0, 2), (1, 2), (1, 3), (2, 4), (3, 4), (3, 5), (4, 7), (5, 6), (6, 7)]
+H.append(("Constellation", "The cone drawn as a star constellation over deep navy.", "Dark",
+    bg_grad(i, "#101B3F", "#050A1C") + dots(95, 70, "#fff", (1, 3), 1000, (.2, .7)),
+    ''.join(f'<path d="M{pts[a][0]},{pts[a][1]} L{pts[b][0]},{pts[b][1]}" stroke="#FFB870" stroke-width="5" opacity=".7"/>' for a, b in lines)
+    + ''.join(f'<circle cx="{x}" cy="{y}" r="16" fill="#FFD9A8"/><circle cx="{x}" cy="{y}" r="34" fill="#FF8A00" opacity=".25"/>' for x, y in pts)))
+i = 96
+H.append(("Tangram", "Seven tangram pieces arranged into a cone. Puzzle-box charm.", "Concept",
+    bg_grad(i, "#F7F4EE", "#E6DFD2"),
+    '<g stroke="#F7F4EE" stroke-width="10" stroke-linejoin="round">'
+    '<path d="M512,230 L600,460 L424,460Z" fill="#FF8A00"/><path d="M424,460 L600,460 L512,560Z" fill="#FFFFFF"/><path d="M424,460 L512,560 L380,580Z" fill="#E0600A"/>'
+    '<path d="M600,460 L644,580 L512,560Z" fill="#FFB25C"/><path d="M380,580 L644,580 L690,700 L334,700Z" fill="#FF7A00"/>'
+    '<path d="M300,700 H512 L512,770 H320Z" fill="#C24A00"/><path d="M512,700 H724 L704,770 H512Z" fill="#8F3600"/></g>'))
+i = 97
+H.append(("Negative Space", "An orange disc with the cone cut clean out of it. Pure figure-ground.", "Minimal",
+    '<rect width="1024" height="1024" fill="#FFFFFF"/>',
+    f'<mask id="ns97"><rect width="1024" height="1024" fill="#fff"/><g fill="#000"><path d="{cone_path(250, 690, 170)}"/><rect x="300" y="700" width="424" height="50" rx="20"/></g>'
+    '<g fill="#fff"><rect x="0" y="420" width="1024" height="50"/><rect x="0" y="560" width="1024" height="50"/></g></mask>'
+    '<circle cx="512" cy="512" r="380" fill="#FF7A00" mask="url(#ns97)"/>'))
+i = 98
+H.append(("Bauhaus", "Primary-colour Bauhaus composition: circle, square and a black cone.", "Bold",
+    '<rect width="1024" height="1024" fill="#F2EBDD"/><circle cx="330" cy="380" r="220" fill="#E4312B"/><rect x="560" y="520" width="330" height="330" fill="#1F4FB5"/><rect x="560" y="170" width="300" height="80" fill="#F5C518"/>',
+    cone(i, "#111111", "#F2EBDD", "#111111", shade=False)))
+i = 99
+H.append(("Enamel Pin", "Hard-enamel pin: gold metal outlines, glossy enamel fills and a highlight glint.", "Pro",
+    bg_grad(i, "#3C3F46", "#1E2024"),
+    lg("ep99", "#FFE9A6", "#C99A2E", 0, 0, 1, 1) + '<filter id="pn99"><feDropShadow dx="0" dy="18" stdDeviation="14" flood-opacity=".5"/></filter>'
+    '<g filter="url(#pn99)">' + cone(i, OR, "#FFFFFF", OR_D, shade=False, stroke="url(#ep99)", sw=26, gloss=True) + '</g>'
+    '<path d="M460,330 L480,300" stroke="#fff" stroke-width="14" stroke-linecap="round" opacity=".9"/>'))
+i = 100
+topo = ''.join(f'<path d="M{512-r*1.1:.0f},{540} C{512-r*1.1:.0f},{540-r*1.2:.0f} {512+r*1.3:.0f},{540-r*1.1:.0f} {512+r*1.1:.0f},{540+r*.1:.0f} C{512+r*.9:.0f},{540+r:.0f} {512-r:.0f},{540+r*1.1:.0f} {512-r*1.1:.0f},{540}Z" fill="none" stroke="#FF8A00" stroke-width="4" opacity="{.25+.05*(k%3)}"/>' for k, r in enumerate(range(120, 700, 45)))
+H.append(("Topographic", "Contour-map lines radiating from the cone like a summit on a trail map.", "Concept",
+    '<rect width="1024" height="1024" fill="#FFF8EE"/>' + topo, sh(i, 14, 14, .2) + G(i, C(i, OR, "#fff", OR_D, s=.8, dy=10))))
+
+for name, desc, tag, bg, fg in H:
+    add(name, desc, bg, fg, tag)
+
+assert len(designs) == 100
 
 # ---------- exporters ----------
 def svg(body, defs=""):

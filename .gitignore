@@ -1,6 +1,7 @@
-node_modules/
-.vercel/
-data/
-votes.json
-__pycache__/
 .DS_Store
+.vercel/
+__pycache__/
+data/
+dump.zip
+node_modules/
+votes.json

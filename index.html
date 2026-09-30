@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>VLC Icon Refresh — 50 Concepts</title>
-<meta name="description" content="50 guideline-friendly VLC icon concepts for macOS, Windows, iOS, Android and Linux. Tap to vote.">
+<title>VLC Icon Refresh — 100 Concepts</title>
+<meta name="description" content="100 guideline-friendly VLC icon concepts for macOS, Windows, iOS, Android and Linux. Tap to vote.">
 <link rel="icon" href="icons/macos/30.svg">
 <style>
 :root{--bg:#0E0E10;--panel:#17171A;--panel2:#1F1F23;--line:#2C2C31;--text:#F4F4F5;--mute:#A1A1AA;--or:#FF7A00;--or2:#FF9A3C;--r:18px}
@@ -133,8 +133,13 @@ dialog::backdrop{background:rgba(0,0,0,.72);backdrop-filter:blur(6px)}
 section.all{padding:10px 0 50px}
 section.all h2{font-size:28px;margin:0 0 6px}
 .alldock{overflow-x:auto;padding-bottom:6px}
-.alldock .mock{min-width:760px;aspect-ratio:auto;height:330px}
-.alldock .dock{gap:6px;flex-wrap:wrap;justify-content:center;width:min(94%,1080px)}.alldock .dock .it{width:44px;height:44px}.alldock .dock .it.hl{width:44px;height:44px;margin:0}
+.alldock .mock{min-width:760px;aspect-ratio:auto;height:400px}
+.alldock .dock{gap:6px;flex-wrap:wrap;justify-content:center;width:min(94%,1080px)}.alldock .dock .it{width:40px;height:40px}.alldock .dock .it.hl{width:40px;height:40px;margin:0}
+.open{padding-top:10px;padding-bottom:40px}.open h2{font-size:28px;margin:0 0 6px}.open p{color:var(--mute);margin:0 0 18px;max-width:760px}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.lk{display:block;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;text-decoration:none;color:var(--text)}
+.lk:hover{border-color:var(--or)}.lk b{display:block;margin-bottom:2px}.lk span{color:var(--mute);font-size:14px}
+footer a{color:var(--or2)}
 footer{border-top:1px solid var(--line);padding:28px 0 60px;color:var(--mute);font-size:14px}
 .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(30px);background:#fff;color:#111;padding:10px 18px;border-radius:999px;font-weight:600;opacity:0;transition:.25s;z-index:99;pointer-events:none}
 .toast.on{opacity:1;transform:translateX(-50%)}
@@ -248,7 +253,7 @@ let tt; function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('o
 let FILTER='All', SORT='num';
 function renderCards(){
   const max = Math.max(1,...Object.values(COUNTS));
-  let list = ICONS.filter(d=>FILTER==='All'||d.tag===FILTER||(FILTER==='My votes'&&MINE.has(d.id)));
+  let list = ICONS.filter(d=>FILTER==='All'||d.tag===FILTER||(FILTER==='Holidays'&&['Religious','National','Seasonal'].includes(d.tag))||(FILTER==='My votes'&&MINE.has(d.id)));
   if(SORT==='votes') list=[...list].sort((a,b)=>(COUNTS[b.id]||0)-(COUNTS[a.id]||0));
   $('#grid').innerHTML = list.map(d=>{const c=COUNTS[d.id]||0;return `
   <article class="card ${MINE.has(d.id)?'voted':''}" data-open="${d.id}" style="cursor:pointer">
@@ -263,7 +268,7 @@ function renderCards(){
 function renderAll(){
   const el=$('#alldock'); if(!el) return;
   const top=[...ICONS].sort((a,b)=>(COUNTS[b.id]||0)-(COUNTS[a.id]||0)||a.id.localeCompare(b.id));
-  el.innerHTML=`<div class="mock mac"><div class="menubar"><b>Finder</b><span>All 50 concepts, sorted by votes</span></div><div class="dock">${top.map(d=>`<div class="it" title="#${d.id} ${esc(d.name)}"><img alt="" src="${IC(d.id,'macos')}"></div>`).join('')}</div></div>`;
+  el.innerHTML=`<div class="mock mac"><div class="menubar"><b>Finder</b><span>All 100 concepts, sorted by votes</span></div><div class="dock">${top.map(d=>`<div class="it" title="#${d.id} ${esc(d.name)}"><img alt="" src="${IC(d.id,'macos')}"></div>`).join('')}</div></div>`;
 }
 let CUR=null, PLAT='macos';
 function openPreview(id, plat){
@@ -293,15 +298,25 @@ async function main(){
     <div class="full">${platHTML(id,'compare')}</div><div>${platHTML(id,'windows')}</div><div>${platHTML(id,'linux')}</div><div class="full">${platHTML(id,'phones')}</div></div>`;
     return;
   }
-  const tags=['All',...new Set(ICONS.map(d=>d.tag)),'My votes'];
+  const HOL=['Religious','National','Seasonal'];
+  const tags=['All',...new Set(ICONS.map(d=>d.tag).filter(t=>!HOL.includes(t))),'Holidays',...HOL,'My votes'];
   $('#app').innerHTML=`<header class="wrap"><div class="eyebrow">Unofficial redesign study</div><h1>A VLC icon that feels at home on macOS.</h1>
-  <p class="lede">VLC's current Mac icon is a bare cone with no plate, so it sits smaller and off-grid next to every other app in the dock. Here are 50 concepts that follow Apple's icon grid, and adapt to Windows, iOS, Android and Linux. Tap any icon to see it in every dock, then vote from there. Tap Vote again to undo.</p>
+  <p class="lede">VLC's current Mac icon is a bare cone with no plate, so it sits smaller and off-grid next to every other app in the dock. Here are 100 concepts that follow Apple's icon grid and adapt to Windows, iOS, Android and Linux: 67 design directions plus 33 holiday editions, from Christmas, Hanukkah, Eid and Diwali to the Fourth of July, the 14 Juillet and St Patrick's Day. Tap any icon to see it in every dock, then vote from there. Tap Vote again to undo.</p>
   <div class="why"><div><b>Squircle plate</b><span>824 px continuous-corner body on a 1024 canvas, like every native app.</span></div><div><b>Optical balance</b><span>The cone fills ~60% of the plate so it matches its neighbours' visual weight.</span></div><div><b>Depth, not clutter</b><span>Soft top-lit gradient and one drop shadow, per Tahoe's layered-icon guidance.</span></div><div><b>One source, five masks</b><span>Each concept is split into background + foreground layers for every platform mask.</span></div></div></header>
   <div class="bar"><div class="wrap">${tags.map(t=>`<button class="chip" data-filter="${t}" aria-pressed="${t==='All'}">${t}</button>`).join('')}<span class="spacer"></span><span class="status" id="status">Loading votes…</span>
   <select class="sort" id="sort" aria-label="Sort"><option value="num">Sort: number</option><option value="votes">Sort: most votes</option></select></div></div>
   <main class="wrap"><div class="grid" id="grid"></div>
-  <section class="all"><h2>All 50 in one dock</h2><p style="color:var(--mute);margin:0 0 14px">A quick side-by-side at real dock scale, ordered by current votes.</p><div class="alldock" id="alldock"></div></section></main>
-  <footer class="wrap">Concept work, not affiliated with VideoLAN. The VLC cone is a trademark of VideoLAN. Every icon ships as SVG layers per platform; screenshots are in <code>/shots</code>.</footer>
+  <section class="all"><h2>All 100 in one dock</h2><p style="color:var(--mute);margin:0 0 14px">A quick side-by-side at real dock scale, ordered by current votes.</p><div class="alldock" id="alldock"></div></section></main>
+  <section class="wrap open"><h2>Open, and fully transparent</h2>
+  <p>Everything here is MIT-licensed and public. The live vote tally is published as a plain JSON file after every vote, and snapshots of it are committed to GitHub so anyone can check the history.</p>
+  <div class="links">
+    <a class="lk" href="https://github.com/paulfxyz/vlc-logotype" target="_blank" rel="noopener"><b>Source on GitHub</b><span>paulfxyz/vlc-logotype</span></a>
+    <a class="lk" href="dump.zip" download><b>Download everything</b><span>dump.zip · all concepts, every platform, all mockups</span></a>
+    <a class="lk" href="counts.json" target="_blank"><b>Live vote counts</b><span>counts.json · updated on every vote</span></a>
+    <a class="lk" href="https://github.com/paulfxyz/vlc-logotype/blob/main/votes/counts.json" target="_blank" rel="noopener"><b>Vote ledger on GitHub</b><span>votes/counts.json · committed snapshots</span></a>
+    <a class="lk" href="https://github.com/paulfxyz/vlc-logotype/blob/main/LICENSE" target="_blank" rel="noopener"><b>MIT License</b><span>use, fork, remix freely</span></a>
+  </div></section>
+  <footer class="wrap">MIT License · <a href="https://github.com/paulfxyz/vlc-logotype" target="_blank" rel="noopener">github.com/paulfxyz/vlc-logotype</a> · <a href="dump.zip" download>dump.zip</a> · <a href="counts.json" target="_blank">counts.json</a><br>Concept work, not affiliated with or endorsed by VideoLAN. "VLC" and the cone are trademarks of VideoLAN.</footer>
   <dialog id="pv"></dialog>`;
   $('#sort').onchange=e=>{SORT=e.target.value;renderCards()};
   renderCards(); await loadCounts(); renderCards();
